@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu execute="~/.config/openbox/scripts/ob-mpd.py"      id="pipe-mpd"         label="MPD"/>
+<menu execute="~/.config/openbox/scripts/system-info.sh" id="pipe-system-info" label="System"/>
+<menu execute="~/.config/openbox/scripts/wallmenu.py"    id="pipe-feh"         label="Feh"/>
+<menu execute="~/.config/openbox/scripts/xcompmgr.sh"    id="pipe-composite"   label="Compositing"  />
+
+<menu id="applications" label="Apps">
+  <separator label="Applications" />
+  <item label="Dateimanager">
+    <action name="Execute">
+      <execute>pcmanfm --no-desktop</execute>
+    </action>
+  </item>
+  <item label="GVim">
+    <action name="Execute">
+      <execute>gvim</execute>
+    </action>
+  </item>
+  <item label="Editor">
+    <action name="Execute">
+      <execute>leafpad</execute>
+    </action>
+  </item>
+  <item label="GIMP">
+    <action name="Execute">
+      <execute>gimp</execute>
+    </action>
+  </item>
+  <item label="Pidgin">
+    <action name="Execute">
+      <execute>pidgin</execute>
+    </action>
+  </item>
+  <item label="Openoffice Word">
+    <action name="Execute">
+      <execute>oowriter</execute>
+    </action>
+  </item>
+</menu>    
+
+<menu id="games" label="Games">
+  <separator label="Games" />
+  <item label="Xmoto">
+    <action name="Execute">
+      <execute>xmoto</execute>
+    </action>
+  </item>
+  <item label="Torcs">
+    <action name="Execute">
+      <execute>torcs</execute>
+    </action>
+  </item>
+  <item label="ETRacer">
+    <action name="Execute">
+      <execute>etracer</execute>
+    </action>
+  </item>
+  <item label="Warsow">
+    <action name="Execute">
+      <execute>warsow</execute>
+    </action>
+  </item>
+</menu>
+
+<menu id="openbox" label="Openbox">
+  <separator label="Openbox" />
+  <item label="ObConf">
+    <action name="Execute">
+      <execute>obconf</execute>
+    </action>
+  </item>
+  <item label="Reconfigure">
+    <action name="Reconfigure"/>
+  </item>
+  <item label="ObMenu">
+    <action name="Execute">
+      <execute>obmenu</execute>
+    </action>
+  </item>
+  <item label="Erscheinungsbild">
+    <action name="Execute">
+      <execute>lxappearance</execute>
+    </action>
+  </item>
+  <item label="Background">
+    <action name="Execute">
+      <execute>nitrogen ~/.wallpapers</execute>
+    </action>
+  </item>
+  <!-- <menu id="pipe-feh" /> -->
+  <menu id="pipe-composite" />
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="ben" />
+  <item label="Internet">
+    <action name="Execute">
+      <execute>firefox</execute>
+    </action>
+  </item>
+  <item label="Music">
+    <action name="Execute">
+      <execute>sonata</execute>
+    </action>
+  </item>
+  <item label="Terminal">
+    <action name="Execute">
+      <execute>urxvtc</execute>
+    </action>
+  </item>
+  <separator />
+  <menu id="applications"/>
+  <menu id="games" />
+  <menu id="openbox"/>
+  <separator />
+  <menu id="pipe-mpd"/>
+  <menu id="pipe-system-info"/>
+  <separator />
+  <item label="Exit">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+</menu>
+
+</openbox_menu>
