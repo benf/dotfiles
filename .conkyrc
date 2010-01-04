@@ -1,0 +1,53 @@
+# mod by uel
+#avoid flicker
+double_buffer yes
+no_buffers yes
+
+#own window to run simultanious 2 or more conkys
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_title upper-status-bar
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,withdrawn
+
+#borders
+#draw_borders no
+border_margin 1
+
+#shades
+draw_shades no
+#draw_graph_borders yes
+#draw_borders yes
+
+#position
+gap_x 0
+gap_y 0 
+alignment top_right
+
+#behaviour
+update_interval 1
+
+#colour
+#default_color 000000
+default_color D6D6D6
+#default_color bfbfbf
+#default_shade_color 000000
+own_window_colour 202020
+#draw_borders_colour 000000
+#draw_graph_borders_colour 000000
+#484432 95956B
+
+#font
+use_xft yes
+xftfont HandelGotD:pixelsize=10
+
+#to prevent window from moving
+use_spacer none
+minimum_size 2045 10
+
+#mpd
+mpd_host localhost
+mpd_port 6600
+# ${offset -22} 
+TEXT
+${voffset -1} Cpu: ${color E8BCA7}${font}${cpu}% ${color 292929}<${color} P: ${color BB4E3F}${font}${processes}${color} R: ${color 7FBB3F}${font}${running_processes}${color 292929} |${color} Mem: ${color E8BCA7}${font}${mem}${color} Swap: ${color E8BCA7}${font} ${swap} ${color 292929} | ${color} Uptime: ${color 8D41CC}${font}${uptime_short}${color 292929} | ${color E8BCA7}${font}${downspeed eth0} Kb/s ${color} ${totaldown eth0} down${color 292929}  | ${color} ${color E8BCA7}${upspeed eth0} Kb/s ${color} ${totalup eth0} up${color 292929}  |  ${color}Main: ${color E8BCA7}${font}${fs_free /} ${color} Home: ${color E8BCA7}${font}${fs_free /home} ${color 292929}|  ${color}Temperature: ${color D3BE4C}${font}${acpitemp}${color}C ${color 292929} | ${color E8BCA7}${color} Mpd:  ${color E8BCA7}${font}${mpd_artist} - $mpd_title ${alignr}${color E8BCA7}${time %A, %d %B} ${color}${time  %H:%M}
