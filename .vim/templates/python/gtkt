@@ -1,0 +1,3 @@
+gtk.threads_enter()
+<++>
+gtk.threads_leave()
