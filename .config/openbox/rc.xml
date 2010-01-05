@@ -373,11 +373,13 @@
       <mousebind button="W-Right" action="Drag">
         <action name="Resize"/>
       </mousebind>
+	  <!--
       <mousebind button="W-Middle" action="Press">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
-      </mousebind>
+	  </mousebind>
+	  -->
       <mousebind button="W-Up" action="Click">
         <action name="DesktopPrevious"/>
       </mousebind>
@@ -412,7 +414,7 @@
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
-      </mousebind>
+	</mousebind>
       <mousebind button="Up" action="Click">
         <action name="Shade"/>
         <action name="FocusToBottom"/>
@@ -479,7 +481,7 @@
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
-      </mousebind>
+	</mousebind>
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
@@ -531,6 +533,7 @@
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
+
       <mousebind button="Middle" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
