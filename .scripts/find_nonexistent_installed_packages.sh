@@ -10,6 +10,6 @@ do
 		# as soon as we find a package => got to next package in outer loop
 		[[ -d "${overlay}/${package}" ]] && continue 2;
 	done
-	# this is reached ONLY if the package was NOT found
+	# this is reached ONLY if the package was NOT found in the tree
 	echo "${package}"
 done
