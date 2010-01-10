@@ -5,10 +5,11 @@ installed=$(find /var/db/pkg -maxdepth 2 -mindepth 2 -printf "%P\n" | xargs qato
 
 for package in ${installed}
 do
-	found=0
 	for overlay in "/usr/portage/" ${PORTDIR_OVERLAY}
 	do
-		[[ -d "${overlay}/${package}" ]] && found=1
+		# as soon as we find a package => got to next package in outer loop
+		[[ -d "${overlay}/${package}" ]] && continue 2;
 	done
-	[[ "${found}" -eq 0 ]] && echo "${package}"
+	# this is reached ONLY if the package was NOT found
+	echo "${package}"
 done
