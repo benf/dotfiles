@@ -83,5 +83,9 @@ map M :%s/$//g
 " mutt rules
 autocmd BufRead /tmp/mutt-* set tw=72 spell
 
-" disable line numbers when using vim als manpager
+" set bash syntax - pressed v in bash-vi mode 
+au BufRead,BufNewFile /tmp/bash-* let is_bash=1|setfiletype sh
+
+" vimmanpager stuff
+" disable line numbers when using vim as manpager
 autocmd FileType man set nonumber
