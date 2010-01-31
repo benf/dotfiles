@@ -38,10 +38,14 @@ alias r="resize_to_min 100 35"
 export MANPAGER="vimmanpager"
 export PAGER="vimpager"
 
+alias vim="r; vim"
+alias man="r; man"
+
 alias ccat="highlight --ansi"
 alias hhtml="highlight --wrap --xhtml --linenumbers --anchors --linenumbers --anchor-prefix=line"
 
 alias use="quse -D"
+alias tv="~/tv.sh"
 # if files are requested to open, open in existing in tabs.
 gvim() {
 	/usr/bin/gvim $([[ $# > 0 ]] && echo --remote-tab-silent $@)
