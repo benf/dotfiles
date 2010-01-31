@@ -44,7 +44,7 @@ fuzzy_edges 0
 
 # geometry <geometry>        # tray's geometry in standard X notation
 #geometry 140x64-50-14
-geometry 140x24+10+40
+geometry 140x24+10+100
 
 # grow_gravity <gravity>     # one of N, S, E, W, NW, NE, SW, SE; tray will grow
                              # in the direction opposite to one specified by

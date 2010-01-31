@@ -14,8 +14,8 @@ set fileformat=unix     " force unix-style line breaks
 set tabpagemax=30       " maximum number of tabs
 " tabs and indenting
 "set expandtab           " insert spaces instead of tab chars
-set tabstop=4          " a n-space tab width
-set shiftwidth=4        " allows the use of < and > for VISUAL indenting
+set tabstop=8          " a n-space tab width
+set shiftwidth=8        " allows the use of < and > for VISUAL indenting
 set softtabstop=0       " counts n spaces when DELETE or BCKSPCE is used
 set fileencoding=utf-8
 
@@ -39,6 +39,7 @@ set laststatus=1        " occasions to show status line, 2=always.
 set ruler               " ruler display in status line
 set showmode            " show mode at bottom of screen
 set showcmd             " display some infos (in visual)
+
 set number              " show line numbers
 set nobackup            " disable backup files (filename~)
 set showmatch           " show matching brackets (),{},[]
@@ -80,4 +81,7 @@ vnoremap ; :
 map M :%s/$//g
 
 " mutt rules
-au BufRead /tmp/mutt-* set tw=72 spell
+autocmd BufRead /tmp/mutt-* set tw=72 spell
+
+" disable line numbers when using vim als manpager
+autocmd FileType man set nonumber
