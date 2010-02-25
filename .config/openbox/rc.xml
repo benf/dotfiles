@@ -302,6 +302,11 @@
         <command>firefox</command>
       </action>
     </keybind>
+    <keybind key="W-n">
+      <action name="Execute">
+        <command>urxvtc -e wicd-curses</command>
+      </action>
+    </keybind>
     <keybind key="W-m">
       <action name="Execute">
         <command>gnome-mplayer</command>
