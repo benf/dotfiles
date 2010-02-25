@@ -88,4 +88,5 @@ au BufRead,BufNewFile /tmp/bash-* let is_bash=1|setfiletype sh
 
 " vimmanpager stuff
 " disable line numbers when using vim as manpager
-autocmd FileType man set nonumber
+autocmd FileType man set nonumber nohlsearch nohlsearch
+
