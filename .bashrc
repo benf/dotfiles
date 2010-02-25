@@ -118,3 +118,5 @@ export AUDIODEV=plug:upmix
 
 
 export XDG_DATA_HOME="${HOME}/.config"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
