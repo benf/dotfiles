@@ -1,3 +1,14 @@
+max() { [[ $# -eq  2 ]] && ( [[ $1 -ge $2 ]] && echo $1 || echo $2 ) }
+
+resize_to_min() {
+#  eval $(resize -s $(max $LINES $2) $(max $COLUMNS $1))
+  printf "\e[8;%d;%dt" $(max $LINES $2) $(max $COLUMNS $1)
+}
+
+gvim() {
+	/usr/bin/gvim $([[ $# > 0 ]] && echo --remote-tab-silent $@)
+}
+
 print_prompt_nl_if_needed() {
   local pos
   local char
