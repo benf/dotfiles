@@ -1,3 +1,5 @@
+set runtimepath=~/.config/vim,$VIMRUNTIME
+
 colorscheme tango
 set background=light
 

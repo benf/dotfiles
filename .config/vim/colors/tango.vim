@@ -20,6 +20,7 @@ let colors_name = "tango"
 " Default Colors
 hi Normal       guifg=#eeeeec guibg=#000000
 hi Normal       ctermfg=grey ctermbg=black
+"hi Normal       ctermfg=white ctermbg=black
 hi NonText      guifg=#555753 guibg=#000000 gui=none
 hi NonText      ctermfg=darkgray
 hi Cursor       guibg=#d3d7cf
