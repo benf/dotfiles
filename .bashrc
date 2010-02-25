@@ -28,6 +28,8 @@ resize_to_min() {
 #  eval $(resize -s $(max $LINES $2) $(max $COLUMNS $1))
   printf "\e[8;%d;%dt" $(max $LINES $2) $(max $COLUMNS $1)
 }
+# list hidden files  - if directory do NOT show contents and dont display ".."
+alias lh="ls -d .[^.]*"
 alias r="resize_to_min 100 35"
 #export PAGER="col -b 2>/dev/null | view -c 'set ft=man' -c 'set titlestring=[view]man' -c 'set number!' -"
 #export PAGER="sed 's/\[[^m]*m//g; s/.//g' | view -c 'set ft=man' -c 'set titlestring=[view]man' -c 'set number!' -"
