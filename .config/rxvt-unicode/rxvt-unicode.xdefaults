@@ -1,16 +1,3 @@
-! file: ~/.Xdefaults                               
-! vim:enc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
-
-
-! Cursour Settings ! 
-Xcursor*theme:  Vanilla-DMZ
-Xcursor.size:   22
-
-! Xft Settings !
-Xft.dpi: 96.0
-Xft.antialias:  true
-
-
 ! Terminal Colors !
 
 ! Black
@@ -123,55 +110,3 @@ urxvt.secondaryScroll:  true
 ! colours for tab
 !urxvt*color8:           [95]#050505
 !urxvt*color15:          #DDDDDD
-
-xterm*foreground:       white
-xterm*background:       black
-
-! xclock --------------------------------------------------------------
-xclock*analog:            false
-xclock*update:            1     
-! update every 1 sec
-xclock*Foreground:        white
-xclock*background:        black
-
-! xpdf -----------------------------------------------------------------
-
-xpdf*enableFreetype:      yes
-xpdf*antialias:           yes
-xpdf*foreground:          white
-xpdf*background:          black
-xpdf*urlCommand:          /usr/bin/firefox %s
-xpdf*viKeys:              on
-
-
-! xscreensaver ---------------------------------------------------------
-
-!font settings
-xscreensaver.Dialog.headingFont:        -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
-xscreensaver.Dialog.bodyFont:           -*-fixed-medium-r-*-*-*-120-*-*-*-*-iso8859-1
-xscreensaver.Dialog.labelFont:          -*-fixed-medium-r-*-*-*-120-*-*-*-*-iso8859-1
-xscreensaver.Dialog.unameFont:          -*-fixed-medium-r-*-*-*-120-*-*-*-*-iso8859-1
-xscreensaver.Dialog.buttonFont:         -*-fixed-bold-r-*-*-*-120-*-*-*-*-iso8859-1
-xscreensaver.Dialog.dateFont:           -*-fixed-medium-r-*-*-*-100-*-*-*-*-iso8859-1
-xscreensaver.passwd.passwdFont:         -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
-!general dialog box (affects main hostname, username, password text)
-xscreensaver.Dialog.foreground:         #ffffff
-xscreensaver.Dialog.background:         #111111
-xscreensaver.Dialog.topShadowColor:     #111111
-xscreensaver.Dialog.bottomShadowColor:  #111111
-xscreensaver.Dialog.Button.foreground:  #666666
-xscreensaver.Dialog.Button.background:  #ffffff
-!username/password input box and date text colour
-xscreensaver.Dialog.text.foreground:    #666666
-xscreensaver.Dialog.text.background:    #ffffff
-xscreensaver.Dialog.internalBorderWidth:24
-xscreensaver.Dialog.borderWidth:        20
-xscreensaver.Dialog.shadowThickness:    2     
-! shado thickness - must be > zero
-!timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground:  #ff0000
-xscreensaver.passwd.thermometer.background:  #000000
-xscreensaver.passwd.thermometer.width:       8
-!datestamp format--see the strftime(3) manual page for details
-xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
-

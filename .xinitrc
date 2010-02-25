@@ -1,3 +1,5 @@
+[[ -x ~/.scripts/set_xressources.sh ]] && ~/.scripts/set_xressources.sh
+
 #chooser="/etc/X11/chooser.sh"
 #session=$(XSESSION="${1}" ${chooser})
 #exec ${session:-$(${chooser})}
