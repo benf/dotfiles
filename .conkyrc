@@ -22,7 +22,7 @@ draw_shades no
 #position
 gap_x 0
 gap_y 0 
-alignment top_right
+alignment top_left
 
 #behaviour
 update_interval 1
