@@ -45,7 +45,7 @@ alias ccat="highlight --ansi"
 alias hhtml="highlight --wrap --xhtml --linenumbers --anchors --linenumbers --anchor-prefix=line"
 
 alias use="quse -D"
-alias tv="~/tv.sh"
+alias tv="~/.scripts/tv.sh"
 # if files are requested to open, open in existing in tabs.
 gvim() {
 	/usr/bin/gvim $([[ $# > 0 ]] && echo --remote-tab-silent $@)
