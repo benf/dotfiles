@@ -1,3 +1,4 @@
+# Xdefault is splitted so load the splitted files at startup
 [[ -x ~/.scripts/set_xressources.sh ]] && ~/.scripts/set_xressources.sh
 
 #chooser="/etc/X11/chooser.sh"
