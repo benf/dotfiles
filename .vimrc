@@ -1,3 +1,4 @@
+colorscheme tango
 set background=light
 
 "if &columns < 100
