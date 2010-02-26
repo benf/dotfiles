@@ -1,3 +1,4 @@
+set dir=~/.cache/vim/swp/
 colorscheme tango
 set background=light
 
