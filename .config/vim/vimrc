@@ -1,4 +1,3 @@
-
 colorscheme tango
 set background=light
 
@@ -96,3 +95,4 @@ autocmd FileType man set nonumber nohlsearch nohlsearch
 " some options seem to overwrite this (history..)
 set viminfo+=n$HOME/.cache/vim/viminfo
 set dir=~/.cache/vim/swp/
+set runtimepath=~/.config/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
