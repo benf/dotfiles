@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=
+Name=Conky
+Encoding=UTF-8
+Exec=conky -c ~/.config/conky/conkyrc
+Terminal=false
+Version=0.9.4
+Hidden=False
+Type=Application
+StartupNotify=false
+
