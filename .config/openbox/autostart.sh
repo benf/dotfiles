@@ -22,7 +22,7 @@ export OOO_FORCE_DESKTOP=gnome
 #volwheel &
 #trayer --widthtype request --height 24 --align right --margin 0 --padding 0 \
 #  --transparent true --alpha 256 --tint 0xffffff --SetDockType true &
-stalonetray &
+stalonetray --config ~/.config/stalonetray/stalonetrayrc &
 ~/voltray.py &
 #volwheel &
 
