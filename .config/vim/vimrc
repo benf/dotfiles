@@ -1,4 +1,4 @@
-set dir=~/.cache/vim/swp/
+
 colorscheme tango
 set background=light
 
@@ -51,7 +51,7 @@ set ww=<,>,[,]          " whichwrap -- left/right keys can traverse up/down
 syntax on               " enable syntax highlighting
 
 " set templatepath .vim/plugin/templates.vim 
-let g:templatePath = "/home/ben/.vim/templates"
+let g:templatePath = "~/.config/vim/templates"
 
 " highlight redundant whitespaces and tabs.
 "highlight RedundantSpaces ctermbg=red guibg=red
@@ -92,3 +92,7 @@ au BufRead,BufNewFile /tmp/bash-* let is_bash=1|setfiletype sh
 " disable line numbers when using vim as manpager
 autocmd FileType man set nonumber nohlsearch nohlsearch
 
+" its important that viminfo is set at the end
+" some options seem to overwrite this (history..)
+set viminfo+=n$HOME/.cache/vim/viminfo
+set dir=~/.cache/vim/swp/
