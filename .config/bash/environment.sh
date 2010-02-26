@@ -74,3 +74,6 @@ export AUDIODEV=plug:upmix
 export XDG_DATA_HOME="${HOME}/.config"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
+
+# manually set vim's vimrc variable and then source that file on vim startup
+export VIMINIT='let $MYVIMRC="~/.config/vim/vimrc" | source $MYVIMRC'
