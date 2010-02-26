@@ -28,20 +28,20 @@ hi lCursor      guibg=#d3d7cf
 
 " Search
 hi Search       guifg=#eeeeec guibg=#c4a000
-hi Search       cterm=none ctermfg=grey ctermbg=blue
+hi Search       cterm=none ctermfg=white ctermbg=blue
 hi IncSearch    guibg=#eeeeec guifg=#729fcf
-hi IncSearch    cterm=none ctermfg=yellow ctermbg=green
+hi IncSearch    cterm=none ctermfg=grey ctermbg=darkblue
 
 " Window Elements
 hi StatusLine   guifg=#eeeeec guibg=#4e9a06 gui=bold
-hi StatusLine   ctermfg=white ctermbg=green cterm=bold
+hi StatusLine   ctermfg=white ctermbg=darkblue cterm=bold
 hi StatusLineNC guifg=#d3d7df guibg=#4e9a06
-hi StatusLineNC ctermfg=lightgray ctermbg=darkgreen
+hi StatusLineNc ctermfg=white ctermbg=darkgrey cterm=bold
 hi VertSplit    guifg=#eeeeec guibg=#eeeeec
 hi Folded       guifg=#eeeeec guibg=#75507b
 hi Folded       ctermfg=white ctermbg=magenta
 hi Visual       guifg=#d3d7cf guibg=#4e9a06
-hi Visual       ctermbg=white ctermfg=lightgreen cterm=reverse
+hi Visual       ctermbg=white ctermfg=darkblue cterm=reverse
 
 " Specials
 hi Todo         guifg=#8ae234 guibg=#4e9a06 gui=bold
@@ -77,5 +77,5 @@ hi DiffChange   ctermfg=gray ctermbg=darkgray cterm=none
 hi DiffDelete   guibg=bg
 hi DiffDelete   ctermfg=gray ctermbg=none cterm=none
 hi DiffText     guifg=fg guibg=#c4a000 gui=none
-hi DiffText     ctermfg=gray ctermbg=yellow cterm=none
+hi DiffText     ctermfg=grey ctermbg=darkblue cterm=none
 
