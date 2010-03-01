@@ -90,9 +90,9 @@ autocmd FileType man set nonumber nohlsearch nohlsearch
 
 " its important that viminfo is set at the end
 " some options seem to overwrite this (history..)
-set viminfo+=n~/.cache/vim/viminfo
-set dir=~/.cache/vim/swp/
-set runtimepath=~/.config/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set dir=$XDG_CACHE_HOME/vim/swp/
+set runtimepath=$XDG_DATA_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 
 colorscheme tango
 set background=light
