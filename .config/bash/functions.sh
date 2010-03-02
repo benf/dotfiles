@@ -1,5 +1,10 @@
 max() { [[ $# -eq  2 ]] && ( [[ $1 -ge $2 ]] && echo $1 || echo $2 ) }
 
+# param: width = $1, height = $2
+resize() {
+  printf "\e[8;%d;%dt" $2 $1
+}
+
 resize_to_min() {
 #  eval $(resize -s $(max $LINES $2) $(max $COLUMNS $1))
   printf "\e[8;%d;%dt" $(max $LINES $2) $(max $COLUMNS $1)
