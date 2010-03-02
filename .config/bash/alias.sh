@@ -21,3 +21,7 @@ alias hhtml="highlight --wrap --xhtml --linenumbers --anchors --linenumbers --an
 
 alias use="quse -D"
 alias tv="~/.scripts/tv.sh"
+
+# typos
+alias sl=ls
+
