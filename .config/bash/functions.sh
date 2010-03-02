@@ -5,11 +5,28 @@ resize() {
 	printf "\e[8;%d;%dt" $2 $1
 }
 
+#s() {
+#	local name=${HOSTNAME}.${1}
+#	if [ $1 ]; then
+#		if [ -e /var/run/screen/S-$(whoami)/[0-9]*.${name} ]; then
+#			echo foo
+#			#      screen -x -r -S ${name}
+#		else
+#			screen -S ${name}
+#		fi
+#	else
+#		screen -ls
+#	fi
+#}
+
 resize_to_min() {
 	#  eval $(resize -s $(max $LINES $2) $(max $COLUMNS $1))
 	printf "\e[8;%d;%dt" $(max $LINES $2) $(max $COLUMNS $1)
 }
 
+nh() {
+	nohup "$@" &> /dev/null &
+}
 gvim() {
 	/usr/bin/gvim $([[ $# > 0 ]] && echo --remote-tab-silent $@)
 }
