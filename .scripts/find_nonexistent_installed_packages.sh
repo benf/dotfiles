@@ -6,7 +6,7 @@ portdirs="$(portageq portdir) $(portageq portdir_overlay)"
 
 for package in ${installed}
 do
-	for overlay in ${portdirs}:
+	for overlay in ${portdirs}
 	do
 		# as soon as we find a package => got to next package in outer loop
 		[[ -d "${overlay}/${package}" ]] && continue 2;
