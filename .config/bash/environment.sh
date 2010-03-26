@@ -1,7 +1,13 @@
 #export PAGER="col -b 2>/dev/null | view -c 'set ft=man' -c 'set titlestring=[view]man' -c 'set number!' -"
 #export PAGER="sed 's/\[[^m]*m//g; s/.//g' | view -c 'set ft=man' -c 'set titlestring=[view]man' -c 'set number!' -"
+
 #export MANWIDTH=4294967296
 #export PAGER="sed 's/\[[^m]*m//g' | view -c 'set ft=man' -c 'set titlestring=[view]man' -c 'set number!' -"
+
+# from dell-notebook
+# \x1b = \e ; \x08 = ^H (backspace)
+#PAGER="sed 's/\\x1b\[[^m]*m//g; s/\\x08.//g' | \
+#	view -c 'set ft=man' -c 'set titlestring=man' -c 'set number!' -"
 
 # since vim has support - use built in ones..
 export MANPAGER="vimmanpager"
@@ -66,15 +72,21 @@ CMD="\$(date +%H:%M)"
 #for matlab - wont start with out this
 #export LIBXCB_ALLOW_SLOPPY_LOCK=true
 
-#for sdl
+# configure audio
 export SDL_AUDIODRIVER=alsa
 export AUDIODEV=plug:upmix
 
-
+# set XDG corresponding variables
 export XDG_DATA_HOME="${HOME}/.config"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
+
+# readline should read its user config from this path instead ~/.inputrc
 export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
 
 # manually set vim's vimrc variable and then source that file on vim startup
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
+# matlow wont start on some system without this
+export LIBXCB_ALLOW_SLOPPY_LOCK=true
+
