@@ -43,7 +43,7 @@ xftfont HandelGotD:pixelsize=10
 
 #to prevent window from moving
 use_spacer none
-minimum_size 2045 10
+minimum_size 2040 10
 
 #mpd
 mpd_host localhost
