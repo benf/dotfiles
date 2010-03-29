@@ -1,3 +1,6 @@
+if [ "${SSH_USER}x" = "x" ]; then
+	export SSH_USER=$USER
+fi
 #export PAGER="col -b 2>/dev/null | view -c 'set ft=man' -c 'set titlestring=[view]man' -c 'set number!' -"
 #export PAGER="sed 's/\[[^m]*m//g; s/.//g' | view -c 'set ft=man' -c 'set titlestring=[view]man' -c 'set number!' -"
 
