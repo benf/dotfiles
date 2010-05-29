@@ -72,9 +72,6 @@ CMD="\$(date +%H:%M)"
     #\[\033[1;34m\]$\[\033[0m\] "
 #fi
 
-# for matlab - wont start with out this
-#export LIBXCB_ALLOW_SLOPPY_LOCK=true
-
 # configure audio
 export SDL_AUDIODRIVER=alsa
 #export AUDIODEV=plug:upmix
@@ -95,4 +92,3 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
 # matlow wont start on some system without this
 export LIBXCB_ALLOW_SLOPPY_LOCK=true
-
