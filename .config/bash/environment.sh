@@ -72,17 +72,20 @@ CMD="\$(date +%H:%M)"
     #\[\033[1;34m\]$\[\033[0m\] "
 #fi
 
-#for matlab - wont start with out this
+# for matlab - wont start with out this
 #export LIBXCB_ALLOW_SLOPPY_LOCK=true
 
 # configure audio
 export SDL_AUDIODRIVER=alsa
-export AUDIODEV=plug:upmix
+#export AUDIODEV=plug:upmix
 
 # set XDG corresponding variables
 export XDG_DATA_HOME="${HOME}/.config"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
+
+# openal config in ~/.config/openal/alsoft.conf  instead of ~/.alsoftrc
+export ALSOFT_CONF="${XDG_CONFIG_HOME}/openal/alsoft.conf"
 
 # readline should read its user config from this path instead ~/.inputrc
 export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
