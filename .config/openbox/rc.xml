@@ -324,7 +324,7 @@
     </keybind>
     <keybind key="W-a">
       <action name="Execute">
-        <command>urxvtc -e pa-sink-ctl</command>
+        <command>urxvtc -e pa_sink_ctl</command>
       </action>
     </keybind>
     <keybind key="W-m">
