@@ -73,7 +73,8 @@ CMD="\$(date +%H:%M)"
 #fi
 
 # configure audio
-export SDL_AUDIODRIVER=alsa
+export SDL_AUDIODRIVER=pulse
+#export SDL_AUDIODRIVER=alsa
 #export AUDIODEV=plug:upmix
 
 # set XDG corresponding variables
