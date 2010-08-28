@@ -100,7 +100,11 @@ up() {
 
 	if [[ -f $1 ]]; then 
 		local rand=`date +%s | md5sum | sed -n 's/^\(...\).*$/\1/p'`
-		local name="${rand}-`basename $1`"
+		local r="${rand}"
+		local s=`basename $1`
+
+		local name="$r-$s"
+		# local name="${rand}-`basename $1`"
 		scp -q $1 $server:"/home/benjamin/uploads/${name}" || exit
 
 		local cmd="sudo chown lighttpd:lighttpd /home/benjamin/uploads/${name}"
@@ -111,7 +115,7 @@ up() {
 
 		[[ -n $(echo $types | grep " $ext ") ]] && \
 		local url="http://89.149.199.86/highlight/${name}" || \
-		local url="http://89.149.199.86/filebase/files/${name}"
+		local url="http://89.149.199.86/files/$r/$s"
 
 		echo -n $url | xclip -selection clipboard
 		echo -n $url | xclip -selection primary
