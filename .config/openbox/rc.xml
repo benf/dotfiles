@@ -155,6 +155,21 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <execute>amixer sset PCM on 4%+</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <execute>amixer sset PCM 4%-</execute>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute">
+        <execute>amixer sset PCM toggle</execute>
+      </action>
+    </keybind>
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
       <action name="DesktopLeft">
