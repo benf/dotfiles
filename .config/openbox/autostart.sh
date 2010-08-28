@@ -41,3 +41,5 @@ fi
 tint2 &
 urxvtd -q -o -f
 synergys
+start-pulseaudio-x11 &
+(sleep 2 ; pidgin) &
