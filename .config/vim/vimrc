@@ -33,7 +33,7 @@ set smartcase           " upper-case sensitive search
 set backspace=2         " full backspacing capabilities
 set history=100         " 100 lines of command line history
 set cmdheight=1         " command line height
-set laststatus=1        " occasions to show status line, 2=always.
+set laststatus=2        " occasions to show status line, 2=always.
 set ruler               " ruler display in status line
 set showmode            " show mode at bottom of screen
 set showcmd             " display some infos (in visual)
