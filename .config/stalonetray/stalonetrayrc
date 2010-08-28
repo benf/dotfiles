@@ -1,25 +1,4 @@
-#transparent true
-#geometry 124x24+3-3
-#icon_gravity W
-#grow_gravity W
-#skip_taskbar true
-#window_layer bottom
-#window_layer bottom
-#
-#sticky true
-
 # vim:filetype=config:tw=80:et
-# 
-# This is sample ~/.stalonetrayrc, resembling default configuration.
-# Remember: command line parameters take precedence.
-#
-# Directives introduced in 0.7.4 are marked with "NEW in 0.7.4"
-#
-####################################################################
-# 
-# stalonetray understands following directives
-#
-####################################################################
 
 # background <color>         # color can be specified as an HTML hex triplet or
                              # as a name from rgb.txt, note that '#' must be quoted
@@ -44,7 +23,7 @@ fuzzy_edges 0
 
 # geometry <geometry>        # tray's geometry in standard X notation
 #geometry 140x64-50-14
-geometry 25x25+0+0
+geometry 1x1+0+0
 
 # grow_gravity <gravity>     # one of N, S, E, W, NW, NE, SW, SE; tray will grow
                              # in the direction opposite to one specified by
@@ -59,28 +38,12 @@ icon_gravity SW
 # icon_size <int>            # specifies dimensions of typical icon slot
 icon_size 24
 
-# ignore_icon_resize [<bool>] # ignore icon attempts to resize their windows
-                             # (NEW in 0.7)
-ignore_icon_resize false
-
-# max_width <int>            # specifies maximal tray's width (0 = no limit)
-max_width 0
-
-# max_height <int>           # specifies maximal tray's height (0 = no limit)
-max_height 25
-
 # no_shrink [<bool>]         # disables shrink-back mode (NEW in 0.7)
 no_shrink false
 
 # parent_bg [<bool>]         # whether to use pseudo-transparency 
                              # (looks better when reparented into smth like FvwmButtons)
 parent_bg false
-
-# pixmap_bg <path_to_xpm>    # use pixmap from specified xpm file for (tiled) background
-# pixmap_bg /home/user/.stalonetraybg.xpm
-
-# respect_icon_hints [<bool>] # try to respect icon hints (NEW in 0.7)
-respect_icon_hints false
 
 # skip_taskbar [<bool>]      # hide tray`s window from the taskbar
 skip_taskbar true
@@ -111,9 +74,10 @@ window_layer bottom
                              # dock, normal, toolbar, utility
 window_type dock
 
-# withdrawn [<bool>]         # start withdrawn (NEW in 0.7, prior to that
-                             # withdrawn mode was default!)
-withdrawn true
+# dockapp_mode <mode>        # set dockapp mode, which can be either simple (for
+                             # e.g. OpenBox, wmaker for WindowMaker, or none
+                             # (default). NEW in 0.8.
+dockapp_mode simple
 
 # xsync [<bool>]             # whether to operate on X server synchronously (SLOOOOW)
 xsync false
