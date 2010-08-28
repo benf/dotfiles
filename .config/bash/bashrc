@@ -1,5 +1,4 @@
 [[ -d ~/bin/  ]] && PATH="~/bin/:$PATH"
-[[ -d ~/.bin/ ]] && PATH="~/.bin/:$PATH"
 
 if [[ $- != *i* ]] ; then
 	# Shell is non-interactive.  Be done now!
