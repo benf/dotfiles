@@ -307,6 +307,11 @@
         <command>urxvtc -e wicd-curses</command>
       </action>
     </keybind>
+    <keybind key="W-a">
+      <action name="Execute">
+        <command>urxvtc -e pa-sink-ctl</command>
+      </action>
+    </keybind>
     <keybind key="W-m">
       <action name="Execute">
         <command>gnome-mplayer</command>
