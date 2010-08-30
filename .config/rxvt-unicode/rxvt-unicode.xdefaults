@@ -6,6 +6,8 @@ urxvt*color0:   rgba:1000/1000/1000/faff
 !urxvt*color8:  #555753
 urxvt*color8:   rgb:55/57/53
 
+!urxvt*inheritPixmap: false
+
 ! Red
 !*color1:  #cc0000
 !*color9:  #ef2929
