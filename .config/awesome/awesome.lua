@@ -305,9 +305,8 @@ end
 
 clientbuttons = awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
-    awful.button({ modkey }, 1, awful.mouse.client.move),
-    awful.button({ modkey }, 3, awful.mouse.client.resize),
-
+    awful.button({ modkey }, 1, function(c) client.focus=c; c:raise(); awful.mouse.client.move(c); end),
+    awful.button({ modkey }, 3, function(c) client.focus=c; c:raise(); awful.mouse.client.resize(c) end),
     awful.button({ modkey }, 2, function(c) c:kill() end)
 )
 
@@ -339,6 +338,9 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
+    -- Give Client focus when entering a screen
+    c:add_signal("property::screen", function(c) client.focus = c end)
+
     -- Add a titlebar
     -- awful.titlebar.add(c, { modkey = modkey })
 
