@@ -351,7 +351,7 @@ client.add_signal("manage", function (c, startup)
 
         -- Put windows in a smart way, only if they does not set an initial position.
         if not c.size_hints.user_position and not c.size_hints.program_position then
-	    awful.placement.under_mouse(c)
+            awful.placement.under_mouse(c)
             awful.placement.no_offscreen(c)
         end
     end
