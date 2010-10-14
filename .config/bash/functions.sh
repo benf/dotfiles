@@ -232,3 +232,10 @@ die() {
 	echo " * ${*:-(no error message)}"
 }
 
+wscan() {
+	local dev=$1
+	local pattern=$2
+
+	iw $dev scan | \
+	sed -e '/^[^\t]/{x;p;x;}' | sed  -e '/./{H;$!d;}' -e "x;/$pattern/!d;" | sed "/^$/d"
+}
