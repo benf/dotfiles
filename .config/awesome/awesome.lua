@@ -18,6 +18,7 @@ local runonce = require("runonce")
 runonce.run("urxvtd -q -o -f")
 runonce.run("start-pulseaudio-x11")
 runonce.run("synergys")
+runonce.run("synergyc 127.0.0.1:24801")
 runonce.run("pidgin")
 runonce.run(os.getenv("HOME") .. "/.local/bin/swIcon.py")
 
