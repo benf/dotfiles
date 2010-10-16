@@ -115,7 +115,7 @@ up() {
 
 		[[ -n $(echo $types | grep " $ext ") ]] && \
 		local url="http://89.149.199.86/highlight/${name}" || \
-		local url="http://89.149.199.86/files/$r/$s"
+		local url="http://89.149.199.86/file/$r/$s"
 
 		echo -n $url | xclip -selection clipboard
 		echo -n $url | xclip -selection primary
