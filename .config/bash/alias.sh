@@ -26,3 +26,6 @@ alias tv="~/.scripts/tv.sh"
 # typos
 alias sl=ls
 
+# connect to 
+alias syn_c="ssh -f -N -R 24801:127.0.0.1:24800"
+
