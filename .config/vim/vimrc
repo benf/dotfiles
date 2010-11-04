@@ -43,6 +43,9 @@ set nobackup            " disable backup files (filename~)
 set showmatch           " show matching brackets (),{},[]
 set ww=<,>,[,]          " whichwrap -- left/right keys can traverse up/down
 
+" search tags-file in the opened file's dir and if not found recursiveley
+set tags=./tags;
+
 " syntax highlighting
 syntax on               " enable syntax highlighting
 
