@@ -86,6 +86,7 @@ urxvt*urlLauncher:      firefox
 urxvt*underlineUrls:    true
 urxvt*matcher.button:   2
 urxvt*cutchars:         `'",;@&*=|?()<>[]{}
+URxvt.urgentOnBell:	true
 
 URxvt.tabbed.tabbar-fg: 15
 URxvt.tabbed.tabbar-bg: 0
