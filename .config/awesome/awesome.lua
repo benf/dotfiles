@@ -11,7 +11,8 @@ require("eminent")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init(os.getenv("HOME") .. "/.local/share/awesome/themes/default/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.local/share/awesome/themes/zenburn/theme.lua")
+--beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 local runonce = require("runonce")
 
@@ -223,6 +224,8 @@ globalkeys = awful.util.table.join(
     
     awful.key({                   }, "Print", function () awful.util.spawn("scrot") end),
     awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrot -s") end),
+
+    awful.key({                   }, "XF86Suspend", function () awful.util.spawn("sudo pm-suspend") end),
 
 
     awful.key({ modkey, "Shift"   }, "r", awesome.restart),
