@@ -1,4 +1,4 @@
 #!/bin/bash
 
-ssh netdirekt -t 'screen -xr irssi'
+ssh netdirekt -t 'LANG="de_DE.UTF-8" screen -xr irssi'
 clear
