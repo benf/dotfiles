@@ -12,7 +12,6 @@ require("eminent")
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init(os.getenv("HOME") .. "/.local/share/awesome/themes/zenburn/theme.lua")
---beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 local runonce = require("runonce")
 
