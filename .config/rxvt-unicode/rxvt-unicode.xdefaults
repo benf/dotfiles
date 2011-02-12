@@ -85,7 +85,7 @@ urxvt*perl-ext-common:  default,matcher,selection
 urxvt*urlLauncher:      firefox
 urxvt*underlineUrls:    true
 urxvt*matcher.button:   2
-urxvt*cutchars:         `'",;@&*=|?()<>[]{}
+urxvt*cutchars:         "`'\",;@&*=|?()<>[]{}"
 URxvt.urgentOnBell:	true
 
 URxvt.tabbed.tabbar-fg: 15
