@@ -225,6 +225,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrot -s") end),
 
     awful.key({                   }, "XF86Suspend", function () awful.util.spawn("sudo pm-suspend") end),
+    awful.key({                   }, "XF86MonBrightnessUp",   function () awful.util.spawn("sudo brightness up") end),
+    awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn("sudo brightness down") end),
     awful.key({}, "XF86TouchpadToggle", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_touchpad.sh") end),
 
 
