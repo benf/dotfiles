@@ -319,12 +319,12 @@
     </keybind>
     <keybind key="W-n">
       <action name="Execute">
-        <command>urxvtc -e wicd-curses</command>
+        <command>urxvt -e wicd-curses</command>
       </action>
     </keybind>
     <keybind key="W-a">
       <action name="Execute">
-        <command>urxvtc -e pa-sink-ctl</command>
+        <command>urxvt -e pa-sink-ctl</command>
       </action>
     </keybind>
     <keybind key="W-m">
@@ -334,17 +334,17 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>urxvtc -e mutt</command>
+        <command>urxvt -e mutt</command>
       </action>
     </keybind>
     <keybind key="W-v">
       <action name="Execute">
-        <command>urxvtc -e alsamixer</command>
+        <command>urxvt -e alsamixer</command>
       </action>
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <command>urxvtc</command>
+        <command>urxvt</command>
       </action>
     </keybind>
     <keybind key="W-q">
@@ -651,12 +651,12 @@
     <context name="Desktop">
       <mousebind button="W-Middle" action="Press">
         <action name="Execute">
-          <command>urxvtc</command>
+          <command>urxvt</command>
         </action>
       </mousebind>
       <mousebind button="W-Left" action="Press">
         <action name="Execute">
-          <command>urxvtc</command>
+          <command>urxvt</command>
         </action>
       </mousebind>
       <mousebind button="Left" action="Press">

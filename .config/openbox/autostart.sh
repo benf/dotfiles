@@ -39,7 +39,7 @@ fi
 #  --transparent true --alpha 128 --tint 0x050505 &
 # start panel
 tint2 &
-urxvtd -q -o -f
+#urxvtd -q -o -f
 synergys
 start-pulseaudio-x11 &
 (sleep 2 ; pidgin) &
