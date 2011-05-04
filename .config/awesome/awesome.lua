@@ -369,6 +369,8 @@ client.add_signal("manage", function (c, startup)
     c:add_signal("unmarked",  function(c)
         if client.focus ~= c then
             c.border_color = beautiful.border_normal
+        else
+            c.border_color = beautiful.border_focus
         end
     end)
 end)

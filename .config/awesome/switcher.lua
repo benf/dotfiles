@@ -56,7 +56,7 @@ local function switcher_next(rel)
 
 	if not cli then
 		if rel > 0 then
-			state.switcher_idx = rel
+			state.switcher_idx = rel - 1
 		elseif rel < 0 then
 			local i = 0
 			local c = awful.client.focus.history.get(capi.mouse.screen, 0)
@@ -64,15 +64,19 @@ local function switcher_next(rel)
 				i = i + 1
 				c = awful.client.focus.history.get(capi.mouse.screen, i)
 			end
-			state.switcher_idx = i - rel
+			state.switcher_idx = i + rel
 		end
 
-		cli = awful.client.focus.history.get(capi.mouse.screen, switcher_idx)
+		cli = awful.client.focus.history.get(capi.mouse.screen, state.switcher_idx)
 	end
 
 	cli:raise()
 
-	awful.client.mark(cli)
+	if awful.client.ismarked(cli) then
+		cli:emit_signal("marked")
+	else
+		awful.client.mark(cli)
+	end
 end
 
 local function switcher_end()
