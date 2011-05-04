@@ -9,6 +9,8 @@ require("naughty")
 -- Dynamic tagging
 require("eminent")
 
+require("switcher")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init(os.getenv("HOME") .. "/.local/share/awesome/themes/zenburn/theme.lua")
@@ -187,6 +189,14 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
+    awful.key({ modkey,           }, "Tab", function()
+        switcher.start( 1, "Super_L", "Tab", "ISO_Left_Tab")
+    end),
+
+    awful.key({ modkey,           }, "ISO_Left_Tab", function()
+        switcher.start(-1, "Super_L", "Tab", "ISO_Left_Tab")
+    end),
+
     awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.byidx( 1)
@@ -205,13 +215,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
-    awful.key({ modkey,           }, "Tab",
-        function ()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end),
 
     -- Standard program
     awful.key({ modkey,           }, "x", function () awful.util.spawn(terminal) end),
@@ -362,10 +365,16 @@ client.add_signal("manage", function (c, startup)
             awful.placement.no_offscreen(c)
         end
     end
+    c:add_signal("marked",  function(c) c.border_color = beautiful.border_marked end)
+    c:add_signal("unmarked",  function(c)
+        if client.focus ~= c then
+            c.border_color = beautiful.border_normal
+        end
+    end)
 end)
 
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- vim: softtabstop=4:expandtab
+-- vim: softtabstop=4:expandtab:shiftwidth=4
