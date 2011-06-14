@@ -93,7 +93,10 @@ runtime ftplugin/man.vim
 au BufRead,BufNewFile /tmp/bash-* let is_bash=1|setfiletype sh
 
 " project specific settings
-autocmd BufNewFile,BufRead /home/ben/src/mesa/* set sw=3 ts=8 sts=3 et
+autocmd BufNewFile,BufRead /home/ben/src/mesa/*{c,h,cpp} set sw=3 ts=8 sts=3 et
+"
+" project specific settings
+autocmd BufNewFile,BufRead /home/ben/src/wayland/*xml set sw=2 ts=8 sts=2 et
 
 " vimmanpager stuff
 " disable line numbers when using vim as manpager
@@ -107,4 +110,3 @@ set runtimepath=$XDG_DATA_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 
 colorscheme tango
 set background=light
-
