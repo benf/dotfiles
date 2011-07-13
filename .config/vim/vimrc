@@ -92,10 +92,13 @@ runtime ftplugin/man.vim
 " set bash syntax - pressed v in bash-vi mode 
 au BufRead,BufNewFile /tmp/bash-* let is_bash=1|setfiletype sh
 
-" project specific settings
-autocmd BufNewFile,BufRead /home/ben/src/mesa/*{c,h,cpp} set sw=3 ts=8 sts=3 et
-"
-" project specific settings
+" mesa project specific settings
+autocmd BufNewFile,BufRead /home/ben/src/mesa*/*{c,h,cpp} set sw=3 ts=8 sts=3 et
+autocmd BufNewFile,BufRead /home/ben/src/mesa*/Makefile.* set ft=make
+autocmd BufNewFile,BufRead /home/ben/src/mesa*/SCons* set ft=python sw=4 sts=4 ts=4 et
+autocmd BufNewFile,BufRead /home/ben/src/mesa*/configure.ac set sw=4 sts=4 ts=8 et
+
+" wayland project specific settings
 autocmd BufNewFile,BufRead /home/ben/src/wayland/*xml set sw=2 ts=8 sts=2 et
 
 " vimmanpager stuff
