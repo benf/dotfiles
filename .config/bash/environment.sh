@@ -93,3 +93,9 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
 # matlow wont start on some system without this
 export LIBXCB_ALLOW_SLOPPY_LOCK=true
+
+if [ $(hostname) = "blx" ]; then
+	export BROWSER=luakit
+else
+	export BROWSER=firefox
+fi
