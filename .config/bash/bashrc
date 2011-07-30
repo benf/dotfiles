@@ -1,10 +1,11 @@
 [[ -d ~/.local/bin/  ]] && PATH="~/.local/bin/:$PATH"
 
+source ~/.config/bash/environment.sh
+
 if [[ $- != *i* ]] ; then
 	# Shell is non-interactive.  Be done now!
 	return
 fi
 
-source ~/.config/bash/environment.sh
 source ~/.config/bash/functions.sh
 source ~/.config/bash/alias.sh

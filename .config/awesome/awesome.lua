@@ -219,7 +219,7 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "x", function () awful.util.spawn(terminal) end),
     awful.key({ modkey,           }, "a", function () awful.util.spawn(terminal .. " -e pa-sink-ctl" ) end),
-    awful.key({ modkey,           }, "w", function () awful.util.spawn("firefox") end),
+    awful.key({ modkey,           }, "w", function () awful.util.spawn("xdg-open about:blank") end),
     awful.key({ modkey,           }, "p", function () awful.util.spawn("pidgin") end),
     awful.key({ modkey,           }, "n", function () awful.util.spawn(terminal .. " -e wicd-curses") end),
     awful.key({ modkey,           }, "i", function () awful.util.spawn(terminal .. " -e " .. os.getenv("HOME") .. "/.scripts/start_remote_irssi.sh") end),
