@@ -1,0 +1,8 @@
+# Gentoo's alsa-plugins ebuild installs pulse configuration files,
+# that overwrite pcm.default with a pulse device, if pulse is running.
+# Lood this file if it exists.
+@hooks [{
+	func load
+	files [ "/usr/share/alsa/pulse.conf" ]
+	errors false
+}]
