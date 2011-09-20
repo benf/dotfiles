@@ -23,5 +23,7 @@ doecho export EGL_DRIVER=egl_dri2
 doecho export EGL_LOG_LEVEL=debug
 #doecho export EGL_PLATFORM=wayland
 
-doecho export XDG_RUNTIME_DIR=$home/src
+if [ "x$XDG_RUNTIME_DIR" = "x" ]; then
+	doecho export XDG_RUNTIME_DIR=$home/src
+fi
 doecho export SDL_VIDEODRIVER=wayland
