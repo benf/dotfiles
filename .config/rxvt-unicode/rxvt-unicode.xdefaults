@@ -1,53 +1,30 @@
 ! Terminal Colors !
 
 ! Black
-!*color0:  #2E3436
 urxvt*color0:   rgba:1000/1000/1000/faff
-!urxvt*color8:  #555753
 urxvt*color8:   rgb:55/57/53
-
-!urxvt*inheritPixmap: false
-
 ! Red
-!*color1:  #cc0000
-!*color9:  #ef2929
 urxvt*color1:   rgb:cc/00/00
 urxvt*color9:   rgb:ef/29/29
 ! Green
-!!*color2:  #73d216
-!*color2:  #4E9A06
-!*color10: #8ae234
 urxvt*color2:   rgb:4e/9a/06
 urxvt*color10:  rgb:8a/e2/34
 ! Yellow
-!*color3:  #c4a000
-!*color11: #FCE94F
 urxvt*color3:   rgb:c4/a0/00
 urxvt*color11:  rgb:fc/e9/4f
 ! Blue
-!*color4:  #3465A4
-!*color12: #204a87
 urxvt*color4:   rgb:34/65/A4
 urxvt*color12:  rgb:20/4a/87
 ! Purple
-!*color5:  #75507b
-!*color13: #5c3566
 urxvt*color5:   rgb:75/50/7b
 urxvt*color13:  rgb:5c/35/66
-
 ! Cyan
-!*color6:  #06989A
-!*color14: #34e2e2
 urxvt*color6:   rgb:06/98/9a
 urxvt*color14:  rgb:34/e2/e2
-
 ! White
-!*color7:  #d3d7cf
-!*color15: #eeeeec
 urxvt*color7:   rgb:d3/d7/cf
 urxvt*color15:  rgb:ee/ee/ec
 
-!urxvt*borderLess:       true
 urxvt*foreground:       rgb:ee/ee/ec
 
 urxvt*background:       rgba:1000/1000/1000/faff
@@ -57,31 +34,20 @@ urxvt*dynamicColors:    on
 !! OH MAN THIS SLOWS SO MUCH DOWN WITH RADEON!
 !!urxvt*depth:            32
 urxvt*depth: 24
+
 ! Orange
-!urxvt*cursorColor:      [95]#f57900
 urxvt*cursorColor:      rgba:f500/7900/0000/faff
-!green
-!urxvt*scrollColor:      #d43210
-!urxvt*scrollColor:      [95]#100909
-! 
-!urxvt*scrollColor:      [95]#2e3436
 urxvt*scrollColor:      rgba:2e00/3400/3600/faff
 
 urxvt*fading:           10
 urxvt*fadeColor:        black
-!urxvt*font:            xft:Bitstream Vera Sans Mono:size=9:autohinting=true
 urxvt*font:             xft:DejaVu Sans Mono:pixelsize=10:autohinting=true
 urxvt*boldFont:         xft:DejaVu Sans Mono:pixelsize=10:autohinting=true
 
-!urxvt*font:             xft:terminus:pixelsize=6
 urxvt*saveLines:        8192
-!urxvt*geometry:         60x17
 urxvt*geometry:         80x22
-!urxvt*geometry:         90x25
-!80x24
 urxvt*perl-lib:         /usr/lib/urxvt/perl/
 urxvt*perl-ext-common:  default,matcher,selection
-!,mark-yank-urls
 urxvt*urlLauncher:      xdg-open
 urxvt*underlineUrls:    true
 urxvt*matcher.button:   2
@@ -98,18 +64,3 @@ urxvt*scrollBar:        true
 urxvt*scrollstyle:      plain
 urxvt*scrollBar_right:  true
 urxvt.secondaryScroll:  true
-
-!urxvt*color0:  [95]#101010
-!*color0: [95]#101010
-!*color0: #101010
-!*color0: rgb:10/10/10
-!*color0:    #101010
-
-!urxvt*color4:           #6699CC
-!urxvt*color12:          #3366FF
-
-!urxvt*keysym.M-u:       perl:mark-yank-urls:activate_mark_mode
-
-! colours for tab
-!urxvt*color8:           [95]#050505
-!urxvt*color15:          #DDDDDD
