@@ -5,6 +5,8 @@ xset r rate 250 50
 # Xdefault is splitted so load the splitted files at startup
 [[ -x ~/.scripts/set_xressources.sh ]] && ~/.scripts/set_xressources.sh
 
+[[ -x ~/.scripts/disable_touchpad.sh ]] && ~/.scripts/disable_touchpad.sh
+
 #chooser="/etc/X11/chooser.sh"
 #session=$(XSESSION="${1}" ${chooser})
 #exec ${session:-$(${chooser})}
