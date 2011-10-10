@@ -19,12 +19,12 @@ local runonce = require("runonce")
 
 local cmd = require("cmds")
 
-runonce.run("urxvtd -q -o -f")
+runonce.run(cmd.urxvtd)
 runonce.run("start-pulseaudio-x11")
 runonce.run("synergys")
 runonce.run("synergyc 127.0.0.1:24801")
 runonce.run("pidgin")
-runonce.run(os.getenv("HOME") .. "/.local/bin/swIcon.py")
+runonce.run(cmd.swIcon)
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
@@ -233,8 +233,8 @@ globalkeys = awful.util.table.join(
     awful.key({                   }, "XF86Sleep",   function () awful.util.spawn(cmd.suspend) end),
     awful.key({                   }, "XF86MonBrightnessUp",   function () awful.util.spawn("sudo brightness up") end),
     awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn("sudo brightness down") end),
-    awful.key({}, "XF86TouchpadToggle", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_touchpad.sh") end),
-    awful.key({}, "XF86TouchpadOn", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_touchpad.sh") end),
+    awful.key({}, "XF86TouchpadToggle", function () awful.util.spawn(cmd.tggle_tpd) end),
+    awful.key({}, "XF86TouchpadOn", function () awful.util.spawn(cmd.tggle_tpd) end),
 
     awful.key({ modkey, "Shift"   }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
