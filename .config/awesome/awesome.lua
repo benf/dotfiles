@@ -17,6 +17,8 @@ beautiful.init(os.getenv("HOME") .. "/.local/share/awesome/themes/zenburn/theme.
 
 local runonce = require("runonce")
 
+local cmd = require("cmds")
+
 runonce.run("urxvtd -q -o -f")
 runonce.run("start-pulseaudio-x11")
 runonce.run("synergys")
@@ -227,8 +229,8 @@ globalkeys = awful.util.table.join(
     awful.key({                   }, "Print", function () awful.util.spawn("scrot") end),
     awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrot -s") end),
 
-    awful.key({                   }, "XF86Suspend", function () awful.util.spawn("sudo pm-suspend") end),
-    awful.key({                   }, "XF86Sleep",   function () awful.util.spawn("sudo pm-suspend") end),
+    awful.key({                   }, "XF86Suspend", function () awful.util.spawn(cmd.suspend) end),
+    awful.key({                   }, "XF86Sleep",   function () awful.util.spawn(cmd.suspend) end),
     awful.key({                   }, "XF86MonBrightnessUp",   function () awful.util.spawn("sudo brightness up") end),
     awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn("sudo brightness down") end),
     awful.key({}, "XF86TouchpadToggle", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_touchpad.sh") end),
