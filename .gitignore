@@ -8,3 +8,4 @@
 .*_history
 /[^.]*
 /.cache/*
+/.local/lib*
