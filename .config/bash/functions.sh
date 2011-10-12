@@ -24,6 +24,16 @@ resize_to_min() {
 	printf "\e[8;%d;%dt" $(max $LINES $2) $(max $COLUMNS $1)
 }
 
+function r() {
+	if [ $# -ge 2 ]; then
+		resize $1 $2
+	elif [ $# -ge 1 ]; then
+		resize $1 $LINES
+	else
+		resize_to_min 100 35
+	fi
+}
+
 nh() {
 	nohup "$@" &> /dev/null &
 }

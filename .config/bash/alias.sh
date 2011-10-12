@@ -10,8 +10,7 @@ alias lh="ls -d .[^.]*"
 alias la="ls -a"
 
 # resizing terminal
-alias r="resize_to_min 100 35"
-alias s="resize 60 17"
+alias s="r 60 17"
 
 # resize terminal before launching curses-apps
 alias vim="r; vim"
