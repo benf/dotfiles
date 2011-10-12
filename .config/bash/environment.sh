@@ -91,6 +91,8 @@ export INPUTRC="${XDG_CONFIG_HOME}/readline/inputrc"
 # manually set vim's vimrc variable and then source that file on vim startup
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
+export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+
 # matlow wont start on some system without this
 export LIBXCB_ALLOW_SLOPPY_LOCK=true
 
