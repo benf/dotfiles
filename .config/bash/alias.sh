@@ -29,3 +29,6 @@ alias sl=ls
 alias syn_c="ssh -f -N -R 24801:127.0.0.1:24800"
 
 alias le="libtool --mode=execute"
+
+alias ip="/sbin/ip"
+alias iw="/usr/sbin/iw"
