@@ -7,8 +7,22 @@ xset r rate 250 50
 
 [[ -x ~/.scripts/disable_touchpad.sh ]] && ~/.scripts/disable_touchpad.sh
 
-#chooser="/etc/X11/chooser.sh"
-#session=$(XSESSION="${1}" ${chooser})
-#exec ${session:-$(${chooser})}
+unset command
 
-exec $(XSESSION="${2:-${XSESSION}}" /etc/X11/chooser.sh)
+# temporarily unset XDG_SESSION_COOKIE so consolekit launches a new session
+realxdgcookie="$XDG_SESSION_COOKIE"
+XDG_SESSION_COOKIE=
+# run all system xinitrc shell scripts which will update $command
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for i in /etc/X11/xinit/xinitrc.d/* ; do
+    if [ -x "$i" ]; then
+      . "$i"
+    fi
+  done
+  unset i
+fi
+# restore XDG_SESSION_COOKIE
+XDG_SESSION_COOKIE="$realxdgcookie"
+unset realxdgcookie
+
+exec $command $(XSESSION="${2:-${XSESSION}}" /etc/X11/chooser.sh)
