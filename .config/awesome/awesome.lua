@@ -224,7 +224,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "w", function () awful.util.spawn("xdg-open about:blank") end),
     awful.key({ modkey,           }, "p", function () awful.util.spawn("pidgin") end),
     awful.key({ modkey,           }, "n", function () awful.util.spawn(terminal .. " -e wicd-curses") end),
-    awful.key({ modkey,           }, "i", function () awful.util.spawn(terminal .. " -e " .. os.getenv("HOME") .. "/.scripts/start_remote_irssi.sh") end),
+    awful.key({ modkey,           }, "i", function () awful.util.spawn(terminal .. " -geometry 100x30 -e " .. os.getenv("HOME") .. "/.scripts/start_remote_irssi.sh") end),
     
     awful.key({                   }, "Print", function () awful.util.spawn("scrot") end),
     awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrot -s") end),
