@@ -21,8 +21,6 @@ local cmd = require("cmds")
 
 runonce.run(cmd.urxvtd)
 runonce.run("start-pulseaudio-x11")
-runonce.run("synergys")
-runonce.run("synergyc 127.0.0.1:24801")
 runonce.run("pidgin")
 runonce.run(cmd.swIcon)
 
