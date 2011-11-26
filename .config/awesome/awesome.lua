@@ -226,6 +226,7 @@ globalkeys = awful.util.table.join(
     
     awful.key({                   }, "Print", function () awful.util.spawn("scrot") end),
     awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrot -s") end),
+    awful.key({ modkey,           }, "Pause", function () awful.util.spawn("xset r rate 250 50") end),
 
     awful.key({                   }, "XF86Suspend", function () awful.util.spawn(cmd.suspend) end),
     awful.key({                   }, "XF86Sleep",   function () awful.util.spawn(cmd.suspend) end),
