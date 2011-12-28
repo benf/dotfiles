@@ -1,4 +1,4 @@
-[[ -d ~/.local/bin/  ]] && PATH="~/.local/bin/:$PATH"
+[[ -d ~/.local/bin/ ]] && PATH="$HOME/.local/bin/:$PATH"
 
 source ~/.config/bash/environment.sh
 
