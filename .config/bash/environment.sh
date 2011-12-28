@@ -13,8 +13,10 @@ fi
 #	view -c 'set ft=man' -c 'set titlestring=man' -c 'set number!' -"
 
 # since vim has support - use built in ones..
-export MANPAGER="vimmanpager"
-export PAGER="vimpager"
+if [ `hash vimpager 2>&-` ]; then
+	export MANPAGER="vimmanpager"
+	export PAGER="vimpager"
+fi
 
 if [[ ${EUID} == 0 ]]; then
 	DELIM_COL='\[\e[0;31m\]'
