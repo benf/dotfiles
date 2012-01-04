@@ -13,7 +13,7 @@ fi
 #	view -c 'set ft=man' -c 'set titlestring=man' -c 'set number!' -"
 
 # since vim has support - use built in ones..
-if [ `hash vimpager 2>&-` ]; then
+if [ `type -P vimpager 2>&-` ]; then
 	export MANPAGER="vimmanpager"
 	export PAGER="vimpager"
 fi
