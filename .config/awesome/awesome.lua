@@ -234,6 +234,9 @@ globalkeys = awful.util.table.join(
     awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn("sudo brightness down") end),
     awful.key({}, "XF86TouchpadToggle", function () awful.util.spawn(cmd.tggle_tpd) end),
     awful.key({}, "XF86TouchpadOn", function () awful.util.spawn(cmd.tggle_tpd) end),
+    -- Manually mapped x220 micmute button to XF86Launch2 (prog2) in udev: keymap.rules
+    awful.key({}, "XF86AudioMute", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_mute.sh output") end),
+    awful.key({}, "XF86Launch2", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_mute.sh input") end),
 
     awful.key({ modkey, "Shift"   }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
