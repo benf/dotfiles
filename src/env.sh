@@ -14,6 +14,7 @@ fi
 doecho export 'ACLOCAL="aclocal -I '$prefix'/share/aclocal"'
 
 doecho export LD_LIBRARY_PATH="$prefix/lib"
+doecho export WESTON_LIBRARY_PATH="$LD_LIBRARY_PATH"
 doecho export PKG_CONFIG_PATH=$LD_LIBRARY_PATH/pkgconfig
 #doecho export C_INCLUDE_PATH="$prefix/include"
 
