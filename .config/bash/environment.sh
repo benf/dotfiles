@@ -18,6 +18,9 @@ if [ `type -P vimpager 2>&-` ]; then
 	export PAGER="vimpager"
 fi
 
+# dont like the automatic pager spawning for ctl aps
+export SYSTEMD_PAGER=cat
+
 if [[ ${EUID} == 0 ]]; then
 	DELIM_COL='\[\e[0;31m\]'
 	DIR_COL='\[\e[0;34m\]'
