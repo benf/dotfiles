@@ -101,6 +101,9 @@ autocmd BufNewFile,BufRead /home/ben/src/mesa*/configure.ac set sw=4 sts=4 ts=8 
 " wayland project specific settings
 autocmd BufNewFile,BufRead /home/ben/src/wayland/*xml set sw=2 ts=8 sts=2 et
 
+" settings for web projects
+autocmd BufNewFile,BufRead /home/ben/htdocs/mutti-web/*{xsl,xml} set sw=2 ts=8 sts=2 et
+
 " vimmanpager stuff
 " disable line numbers when using vim as manpager
 autocmd FileType man set nonumber nohlsearch nohlsearch
