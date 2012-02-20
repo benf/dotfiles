@@ -1,6 +1,7 @@
-# this is HIGHLY TEMPORARELY - until I set this global
-xset r on
-xset r rate 250 50
+
+# Pass -ardelay 250 -arinterval 20 to X server instead.
+#xset r on
+#xset r rate 250 50
 
 # Xdefault is splitted so load the splitted files at startup
 [[ -x ~/.scripts/set_xressources.sh ]] && ~/.scripts/set_xressources.sh
