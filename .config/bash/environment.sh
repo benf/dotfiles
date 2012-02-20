@@ -101,8 +101,4 @@ export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 # matlow wont start on some system without this
 export LIBXCB_ALLOW_SLOPPY_LOCK=true
 
-if [ $(hostname) = "blx" ]; then
-	export BROWSER=luakit
-else
-	export BROWSER=firefox
-fi
+export BROWSER=luakit
