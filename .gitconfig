@@ -1,0 +1,14 @@
+[user]
+	name = Benjamin Franzke
+	email = benjaminfranzke@googlemail.com
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = benjaminfranzke@googlemail.com
+	smtpserverport = 587
+[log]
+	decorate = true
+[alias]
+	grp = !git --no-pager grep --color=auto
+	tree = log --oneline --decorate --graph
+
