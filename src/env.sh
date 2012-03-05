@@ -5,7 +5,7 @@ doecho() {
 
 home=~ben
 
-if [ $(hostname) = "blx" ]; then
+if [ "$HOSTNAME" = "blx" ]; then
 doecho export prefix=$home/.local
 else
 doecho export prefix=$home/dist
