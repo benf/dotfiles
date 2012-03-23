@@ -1,5 +1,7 @@
 #!/bin/bash
 
+which synclient &> /dev/null || exit
+
 exec synclient TouchpadOff=$((1-$(synclient | awk '/TouchpadOff/ { print $3 }')))
 
 device_id=$(xinput list | sed -n "s/^.*Synaptics.*id=\([^\t]*\).*$/\\1/p")
