@@ -21,7 +21,6 @@ local cmd = require("cmds")
 
 runonce.run(cmd.urxvtd)
 runonce.run("start-pulseaudio-x11")
-runonce.run("pidgin")
 runonce.run(cmd.swIcon)
 
 -- This is used later as the default terminal and editor to run.
