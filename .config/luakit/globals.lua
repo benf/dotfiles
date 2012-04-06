@@ -1,6 +1,6 @@
 dofile("/etc/xdg/luakit/globals.lua")
 
-globals.homepage = "http://google.de/"
+globals.homepage = "http://www.google.de/"
 globals.scroll_step = 30
 
 domain_props = {
