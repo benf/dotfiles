@@ -59,7 +59,7 @@ let g:templatePath = "~/.config/vim/templates"
 "match RedundantSpaces /\s\+$\| \+\ze\t\|\t/
 
 " gvim settings
-"set guioptions-=T" Disable toolbar icons
+set guioptions=aeicv
 set guifont=Dejavu\ Sans\ Mono\ 10 " backslash spaces
 "set lines=30
 "set columns=95
