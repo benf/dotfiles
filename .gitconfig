@@ -11,4 +11,9 @@
 [alias]
 	grp = !git --no-pager grep --color=auto
 	tree = log --oneline --decorate --graph
+	branch-info = "!sh -c 'git branch --no-color | \
+		    sed -e \"s/*/ /\" | \
+		    while read branch; do \
+		    git log -1 --format=format:\"%Cred$branch:%Cblue %s %Cgreen%h%Creset (%ar)\" $branch | cat; echo; \
+		    done'"
 
