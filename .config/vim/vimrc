@@ -68,6 +68,9 @@ set guifont=Dejavu\ Sans\ Mono\ 10 " backslash spaces
 :map <F5> :setlocal spell! spelllang=de_de<cr>
 :imap <F5> <C-o>:setlocal spell! spelllang=de_de<cr>
 
+:map <F9> :make<cr>
+:imap <F9> <C-o>:make<cr>
+
 " common save shortcuts ~ dont work with vim :(
 "inoremap <C-s> <esc>:w<cr>a
 "nnoremap <C-s> :w<cr>
