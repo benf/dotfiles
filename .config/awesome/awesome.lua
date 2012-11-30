@@ -232,8 +232,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrot -s") end),
     awful.key({ modkey,           }, "Pause", function () awful.util.spawn("xset r rate 250 50") end),
 
-    awful.key({                   }, "XF86Suspend", function () awful.util.spawn(cmd.suspend) end),
-    awful.key({                   }, "XF86Sleep",   function () awful.util.spawn(cmd.suspend) end),
+    awful.key({                   }, "XF86Suspend", function () awful.util.spawn("systemctl suspend") end),
+    awful.key({                   }, "XF86Sleep",   function () awful.util.spawn("systemctl suspend") end),
     awful.key({                   }, "XF86MonBrightnessUp",   function () awful.util.spawn("sudo brightness up") end),
     awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn("sudo brightness down") end),
     awful.key({}, "XF86TouchpadToggle", function () awful.util.spawn(cmd.tggle_tpd) end),
