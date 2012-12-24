@@ -228,17 +228,17 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "p", function () awful.util.spawn("pidgin") end),
     awful.key({ modkey,           }, "i", function () awful.util.spawn(terminal .. " -geometry 100x30 -e " .. os.getenv("HOME") .. "/.scripts/start_remote_irssi.sh") end),
     
-    awful.key({                   }, "Print", function () awful.util.spawn("scrot") end),
-    awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrot -s") end),
-    awful.key({ modkey,           }, "Pause", function () awful.util.spawn("xset r rate 250 50") end),
+    awful.key({                   }, "Print", function () awful.util.spawn("scrot", false) end),
+    awful.key({ modkey,           }, "Print", function () awful.util.spawn("scrot -s", false) end),
+    awful.key({ modkey,           }, "Pause", function () awful.util.spawn("xset r rate 250 50", false) end),
 
-    awful.key({                   }, "XF86MonBrightnessUp",   function () awful.util.spawn("sudo brightness up") end),
-    awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn("sudo brightness down") end),
-    awful.key({}, "XF86TouchpadToggle", function () awful.util.spawn(cmd.tggle_tpd) end),
-    awful.key({}, "XF86TouchpadOn", function () awful.util.spawn(cmd.tggle_tpd) end),
+    awful.key({                   }, "XF86MonBrightnessUp",   function () awful.util.spawn("sudo brightness up", false) end),
+    awful.key({                   }, "XF86MonBrightnessDown", function () awful.util.spawn("sudo brightness down", false) end),
+    awful.key({}, "XF86TouchpadToggle", function () awful.util.spawn(cmd.tggle_tpd, false) end),
+    awful.key({}, "XF86TouchpadOn", function () awful.util.spawn(cmd.tggle_tpd, false) end),
     -- Manually mapped x220 micmute button to XF86Launch2 (prog2) in udev: keymap.rules
-    awful.key({}, "XF86AudioMute", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_mute.sh output") end),
-    awful.key({}, "XF86Launch2", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_mute.sh input") end),
+    awful.key({}, "XF86AudioMute", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_mute.sh output", false) end),
+    awful.key({}, "XF86Launch2", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_mute.sh input", false) end),
 
     awful.key({ modkey, "Shift"   }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
