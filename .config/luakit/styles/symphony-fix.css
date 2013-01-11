@@ -1,4 +1,5 @@
-body#blueprints-utilities textarea {
+body#blueprints-utilities textarea,
+body#blueprints-pages textarea {
 	-webkit-border-radius: 0px !important;
 	border-radius: 0px !important;
 }
