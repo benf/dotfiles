@@ -10,4 +10,7 @@ domain_props = {
 	["baptisten-buetzow.de"] = {
 		user_stylesheet_uri = "file://" ..luakit.data_dir .. "/styles/symphony-fix.css"
 	},
+	["symphony.bnfr.net"] = {
+		user_stylesheet_uri = "file://" ..luakit.data_dir .. "/styles/symphony-fix.css"
+	},
 }
