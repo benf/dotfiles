@@ -1,0 +1,10 @@
+[Unit]
+Description=Terminal multiplexer
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/screen -dmS session
+ExecStop=/usr/bin/screen -S session -X quit
+
+[Install]
+WantedBy=multiplexer.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Awesome window manager
+After=xorg.target
+Wants=xorg.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/awesome
+
+[Install]
+WantedBy=graphical.target

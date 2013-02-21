@@ -1,0 +1,8 @@
+[Unit]
+Description=Terminal multiplexer
+Documentation=info:screen man:screen(1) man:tmux(1)
+#After=cruft.target
+#Wants=cruft.target
+
+[Install]
+Alias=default.target
