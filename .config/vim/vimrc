@@ -104,6 +104,10 @@ autocmd BufNewFile,BufRead /home/ben/src/mesa*/configure.ac set sw=4 sts=4 ts=8 
 " wayland project specific settings
 autocmd BufNewFile,BufRead /home/ben/src/wayland/*xml set sw=2 ts=8 sts=2 et
 
+" sqlbox
+autocmd BufNewFile,BufRead /home/ben/studium/mmp/sqlbox/*xml set sw=2 ts=8 sts=2 et
+autocmd BufNewFile,BufRead /home/ben/studium/mmp/sqlbox/*php set sw=4 ts=8 sts=4 et
+
 " settings for web projects
 autocmd BufNewFile,BufRead /home/ben/htdocs/mutti-web/*{xsl,xml} set sw=2 ts=8 sts=2 et
 
@@ -120,5 +124,6 @@ set runtimepath=$XDG_DATA_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 colorscheme tango
 set background=light
 autocmd FileType tex colorscheme delek
+autocmd FileType asciidoc colorscheme inkpot
 
 set spellfile=$XDG_DATA_HOME/vim/spell.de.add,$XDG_DATA_HOME/vim/spell.en.add
