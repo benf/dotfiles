@@ -7,7 +7,7 @@ domain_props = {
 	["mail.google.com"] = {
 		user_stylesheet_uri = "file://" ..luakit.data_dir .. "/styles/gmail.css"
 	},
-	["neu.baptisten-buetzow.de"] = {
+	["baptisten-buetzow.de"] = {
 		user_stylesheet_uri = "file://" ..luakit.data_dir .. "/styles/symphony-fix.css"
 	},
 }
