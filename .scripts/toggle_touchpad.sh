@@ -1,5 +1,7 @@
 #!/bin/bash
 
+~/.scripts/toggle_user_unit.sh disable-touchpad.service && exit
+
 which synclient &> /dev/null || exit
 
 exec synclient TouchpadOff=$((1-$(synclient | awk '/TouchpadOff/ { print $3 }')))
