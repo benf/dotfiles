@@ -1,0 +1,11 @@
+[Unit]
+Description=Load X ressources
+After=xorg.target
+Wants=xorg.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh %h/.scripts/set_xressources.sh
+
+[Install]
+WantedBy=graphical.target
