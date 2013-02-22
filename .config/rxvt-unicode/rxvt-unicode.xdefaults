@@ -48,7 +48,7 @@ urxvt*saveLines:        8192
 urxvt*geometry:         80x22
 urxvt*perl-lib:         /usr/lib/urxvt/perl/
 urxvt*perl-ext-common:  default,matcher,selection
-urxvt*urlLauncher:      xdg-open
+urxvt*url-launcher:     xdg-open
 urxvt*underlineUrls:    true
 urxvt*matcher.button:   2
 urxvt*cutchars:         "`'\",;@&*=|?()<>[]{}"
