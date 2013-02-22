@@ -8,6 +8,8 @@ apps = (
 	{ "wm_class": "URxvt",  "icon": "terminal" },
 	{ "wm_class": "XTerm",  "icon": "terminal" },
 	{ "wm_class": "xmoto",  "icon": "xmoto" },
+	{ "wm_class": "mplayer","icon": "video" },
+	{ "wm_class":"mplayer2","icon": "video" },
 	{ "wm_class": "Mumble", "icon": "/home/ben/tmp/mumble/mumble-1.2.2/icons/mumble.ico" }
 )
 
