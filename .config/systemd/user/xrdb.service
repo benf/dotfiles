@@ -5,7 +5,7 @@ Wants=xorg.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh %h/.scripts/set_xressources.sh
+ExecStart=/bin/sh %h/.scripts/set_xresources.sh
 
 [Install]
 WantedBy=graphical.target
