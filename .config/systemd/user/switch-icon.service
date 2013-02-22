@@ -1,0 +1,9 @@
+[Unit]
+Description=Apply icon quirks to broken X11 programs
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/python2 %h/.local/bin/switch-icon.py
+
+[Install]
+WantedBy=graphical.target
