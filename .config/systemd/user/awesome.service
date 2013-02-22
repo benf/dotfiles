@@ -4,7 +4,7 @@ After=xorg.target
 Wants=xorg.target
 
 [Service]
-Type=simple
+BusName=org.naquadah.awesome.awful
 ExecStart=/usr/bin/awesome
 
 [Install]
