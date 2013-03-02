@@ -1,4 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-ssh bnfr.net -t 'LANG="de_DE.UTF-8" screen -xr irssi'
-clear
+exec ssh bnfr.net -t 'LANG="de_DE.UTF-8" screen -xr irssi; clear'
