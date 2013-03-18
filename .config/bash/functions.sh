@@ -37,9 +37,6 @@ function r() {
 nh() {
 	nohup "$@" &> /dev/null &
 }
-gvim() {
-	/usr/bin/gvim $([[ $# > 0 ]] && echo --remote-tab-silent $@)
-}
 
 print_prompt_nl_if_needed() {
 	local pos
