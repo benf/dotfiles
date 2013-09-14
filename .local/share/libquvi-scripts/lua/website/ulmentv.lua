@@ -7,7 +7,7 @@ function ident(self)
     r.formats    = "default|best"
     r.categories = C.proto_rtmp
     local U      = require 'quvi/util'
-    r.handles    = U.handles(self.page_url, {r.domain}, {"/stuckrad%-barre/%d+/.+$"})
+    r.handles    = U.handles(self.page_url, {r.domain}, {"/.+/%d+/.+$"})
     return r
 end
 
@@ -37,7 +37,7 @@ function parse(self)
     self.id = c:match('<a href="#" data%-url="([^"]*)"')
         or error("no match: request data url")
 
-    self.url = { "rtmp://178.23.127.5:1935/vod/" .. self.id }
+    self.url = { "rtmp://178.23.127.5:1935/vod/" .. string.gsub(self.id, " ", "%%20") }
 
     return self
 end
