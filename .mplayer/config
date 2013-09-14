@@ -1,3 +1,32 @@
 [default]
 ao=pulse
 channels=6
+
+# multithreaded decoding of H264/MPEG-1/2 (valid: 1-8)
+#lavdopts=threads=2
+
+[protocol.dvd]
+profile-desc="profile for dvd:// streams"
+#vf=pp=hb/vb/dr/al/fd
+#vf=pp=hb/vb/dr/al,scale
+alang=ger,de,en,
+slang=ger,de,en,
+dvd-device=/dev/sr0
+#vo=vdpau,vaapi:scaling=hq,
+#vo=vaapi:scaling=hq,
+#vo=vaapi
+forcedsubsonly=yes
+
+[protocol.dvdnav]
+profile-desc="profile for dvdnav:// streams"
+profile=protocol.dvd
+mouse-movements=yes
+nocache=yes
+
+[vo.vaapi]
+va=vaapi
+
+[vo.vdpau]
+vc=ffmpeg12vdpau,ffwmv3vdpau,ffvc1vdpau,ffh264vdpau,ffodivxvdpau,
+# Most video filters do not work with vdpau.
+vf-clr=yes
