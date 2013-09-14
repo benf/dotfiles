@@ -30,7 +30,6 @@ alias syn_c="ssh -f -N -R 24801:127.0.0.1:24800"
 
 alias le="libtool --mode=execute"
 
-alias ip="/sbin/ip"
 alias iw="/usr/sbin/iw"
 
 alias nsmlab-virsh="virsh -c qemu+ssh://root@nsmlab.et.hs-wismar.de:1337/system"
