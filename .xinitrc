@@ -1,10 +1,5 @@
 #!/bin/sh
 
-if [ "x$1" = "xsystemd" ]; then
-	export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket
-	exec /usr/lib/systemd/systemd --user
-fi
-
 # Pass -ardelay 250 -arinterval 20 to X server instead.
 #xset r on
 #xset r rate 250 50
