@@ -11,6 +11,8 @@ require("eminent")
 
 require("switcher")
 
+require("vicious")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init(os.getenv("HOME") .. "/.local/share/awesome/themes/zenburn/theme.lua")
@@ -148,6 +150,19 @@ mytasklist.buttons = awful.util.table.join(
                                               if client.focus then client.focus:raise() end
                                           end))
 
+mygmail = widget({ type = "textbox" })
+gmail_t = awful.tooltip({ objects = { mygmail },})
+
+mygmailimg = widget({ type = "imagebox" })
+mygmailimg.image = image("/home/ben/.config/awesome/gmail.21.u.png")
+vicious.widgets.gmail.feed = 
+vicious.register(mygmail, vicious.widgets.gmail,
+    function (widget, args)
+        gmail_t:set_text(args["{subject}"])
+        gmail_t:add_to_object(mygmailimg)
+        return args["{count}"]
+    end, 60) 
+
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt({ layout = awful.widget.layout.horizontal.leftright })
@@ -180,6 +195,7 @@ for s = 1, screen.count() do
         mylayoutbox[s],
         mytextclock,
         s == screen.count() and mysystray or nil,
+        mygmail, mygmailimg,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
