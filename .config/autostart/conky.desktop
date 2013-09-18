@@ -9,3 +9,4 @@ Hidden=True
 Type=Application
 StartupNotify=false
 
+X-GNOME-Autostart-enabled=false
