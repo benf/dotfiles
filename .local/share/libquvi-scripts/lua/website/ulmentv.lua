@@ -37,6 +37,7 @@ function parse(self)
     self.id = c:match('<a href="#" data%-url="([^"]*)"')
         or error("no match: request data url")
 
+    -- alternative: http://178.23.127.5:1935/vod/%id/playlist.m3u8
     self.url = { "rtmp://178.23.127.5:1935/vod/" .. string.gsub(self.id, " ", "%%20") }
 
     return self
