@@ -63,4 +63,5 @@ URxvt.tabbed.tab-bg:    12
 urxvt*scrollBar:        true
 urxvt*scrollstyle:      plain
 urxvt*scrollBar_right:  true
-urxvt.secondaryScroll:  true
+!urxvt.secondaryScroll:  true
+URxvt*secondaryWheel: true
