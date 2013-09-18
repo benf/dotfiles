@@ -3,5 +3,4 @@ b bibleserver.com/start/ELB
 d dict.leo.org
 i mail.google.com
 m cgit.freedesktop.org/mesa/mesa
-s http://lsf.hs-wismar.de/qisserver/rds?state=wplan&act=stg&pool=stg&show=plan&r_zuordabstgv.semvonint=1&k_abstgv.abstgvnr=162&P.vx=lang
 w cgit.freedesktop.org/wayland
