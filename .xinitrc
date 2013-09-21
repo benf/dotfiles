@@ -11,17 +11,22 @@
 
 unset command
 
-# temporarily unset XDG_SESSION_COOKIE so consolekit launches a new session
-realxdgcookie="$XDG_SESSION_COOKIE"
-XDG_SESSION_COOKIE=
-# run all system xinitrc shell scripts which will update $command
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for i in /etc/X11/xinit/xinitrc.d/* ; do
-    [[ -x "$i" ]] && . "$i"
-  done
+if [ -S $XDG_RUNTIME_DIR/dbus/user_bus_socket ]
+then
+	export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket
+else
+	# temporarily unset XDG_SESSION_COOKIE so consolekit launches a new session
+	realxdgcookie="$XDG_SESSION_COOKIE"
+	XDG_SESSION_COOKIE=
+	# run all system xinitrc shell scripts which will update $command
+	if [ -d /etc/X11/xinit/xinitrc.d ]; then
+	  for i in /etc/X11/xinit/xinitrc.d/* ; do
+	    [[ -x "$i" ]] && . "$i"
+	  done
+	fi
+	# restore XDG_SESSION_COOKIE
+	XDG_SESSION_COOKIE="$realxdgcookie"
+	unset realxdgcookie
 fi
-# restore XDG_SESSION_COOKIE
-XDG_SESSION_COOKIE="$realxdgcookie"
-unset realxdgcookie
 
 exec $command $(XSESSION="${2:-${XSESSION}}" /etc/X11/chooser.sh)
