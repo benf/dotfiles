@@ -38,9 +38,13 @@ editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Fixes for the cursor [disables startup notification]
-local oldspawn = awful.util.spawn
-awful.util.spawn = function (s)
-    oldspawn(s, false)
+local spawn_from_awesome = awful.util.spawn
+--awful.util.spawn = function (s)
+--    spawn_from_awesome("launch " .. s, false)
+--end
+
+awful.util.spawn = function(cmd, n)
+    spawn_from_awesome("systemd-run --user --scope -- " .. cmd, n)
 end
 awful.util.spawn("xsetroot -cursor_name left_ptr", false)
 
@@ -252,7 +256,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
 
     -- Standard program
-    awful.key({ modkey,           }, "x", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "x", function () spawn_from_awesome(terminal, false) end),
     awful.key({ modkey,           }, "a", function () awful.util.spawn(terminal .. " -geometry 100x25 -e pa-sink-ctl" ) end),
     awful.key({ modkey,           }, "w", function () awful.util.spawn("luakit") end),
     awful.key({ modkey,           }, "p", function () awful.util.spawn("pidgin") end),
