@@ -17,13 +17,20 @@ require("vicious")
 -- Themes define colours, icons, and wallpapers
 beautiful.init(os.getenv("HOME") .. "/.local/share/awesome/themes/zenburn/theme.lua")
 
-local runonce = require("runonce")
-
 local cmd = require("cmds")
 
-runonce.run(cmd.urxvtd)
-runonce.run("start-pulseaudio-x11")
-runonce.run(cmd.swIcon)
+function spawn_once(unit, cmd)
+    awful.util.spawn("systemd-run --user --scope --unit " .. unit .. " -- " .. cmd, false)
+end
+
+--local runonce = require("runonce")
+--local spawn_once = function(unit, cmd) runonce.run(cmd) end
+
+spawn_once("urxvtd", cmd.urxvtd)
+spawn_once("pulseaudio", "start-pulseaudio-x11")
+spawn_once("switch-icon", cmd.swIcon)
+spawn_once("lxpolkit", "/usr/libexec/lxpolkit")
+spawn_once("nm-applet", "nm-applet")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
