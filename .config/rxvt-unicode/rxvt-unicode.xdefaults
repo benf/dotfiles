@@ -44,6 +44,12 @@ URxvt.fadeColor:        black
 URxvt.font:             xft:DejaVu Sans Mono:pixelsize=10:autohinting=true
 URxvt.boldFont:         xft:DejaVu Sans Mono:pixelsize=10:autohinting=true
 
+urxvt-large.font:       xft:DejaVu Sans Mono:pixelsize=12:autohinting=true
+urxvt-large.boldFont:   xft:DejaVu Sans Mono:pixelsize=12:autohinting=true
+
+urxvt-big.font:         xft:DejaVu Sans Mono:pixelsize=14:autohinting=true
+urxvt-big.boldFont:     xft:DejaVu Sans Mono:pixelsize=14:autohinting=true
+
 URxvt.saveLines:        8192
 URxvt.geometry:         80x22
 URxvt.perl-lib:         /usr/lib/urxvt/perl/
