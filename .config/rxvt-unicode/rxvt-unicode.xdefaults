@@ -1,57 +1,57 @@
 ! Terminal Colors !
 
 ! Black
-urxvt*color0:   rgba:1000/1000/1000/faff
-urxvt*color8:   rgb:55/57/53
+URxvt.color0:   rgba:1000/1000/1000/faff
+URxvt.color8:   rgb:55/57/53
 ! Red
-urxvt*color1:   rgb:cc/00/00
-urxvt*color9:   rgb:ef/29/29
+URxvt.color1:   rgb:cc/00/00
+URxvt.color9:   rgb:ef/29/29
 ! Green
-urxvt*color2:   rgb:4e/9a/06
-urxvt*color10:  rgb:8a/e2/34
+URxvt.color2:   rgb:4e/9a/06
+URxvt.color10:  rgb:8a/e2/34
 ! Yellow
-urxvt*color3:   rgb:c4/a0/00
-urxvt*color11:  rgb:fc/e9/4f
+URxvt.color3:   rgb:c4/a0/00
+URxvt.color11:  rgb:fc/e9/4f
 ! Blue
-urxvt*color4:   rgb:34/65/A4
-urxvt*color12:  rgb:20/4a/87
+URxvt.color4:   rgb:34/65/A4
+URxvt.color12:  rgb:20/4a/87
 ! Purple
-urxvt*color5:   rgb:75/50/7b
-urxvt*color13:  rgb:5c/35/66
+URxvt.color5:   rgb:75/50/7b
+URxvt.color13:  rgb:5c/35/66
 ! Cyan
-urxvt*color6:   rgb:06/98/9a
-urxvt*color14:  rgb:34/e2/e2
+URxvt.color6:   rgb:06/98/9a
+URxvt.color14:  rgb:34/e2/e2
 ! White
-urxvt*color7:   rgb:d3/d7/cf
-urxvt*color15:  rgb:ee/ee/ec
+URxvt.color7:   rgb:d3/d7/cf
+URxvt.color15:  rgb:ee/ee/ec
 
-urxvt*foreground:       rgb:ee/ee/ec
+URxvt.foreground:       rgb:ee/ee/ec
 
-urxvt*background:       rgba:1000/1000/1000/faff
-urxvt*borderColor:      rgba:1000/1000/1000/faff
-urxvt*dynamicColors:    on
+URxvt.background:       rgba:1000/1000/1000/faff
+URxvt.borderColor:      rgba:1000/1000/1000/faff
+URxvt.dynamicColors:    on
 
 !! OH MAN THIS SLOWS SO MUCH DOWN WITH RADEON!
-!!urxvt*depth:            32
-urxvt*depth: 24
+!!URxvt.depth:            32
+URxvt.depth: 24
 
 ! Orange
-urxvt*cursorColor:      rgba:f500/7900/0000/faff
-urxvt*scrollColor:      rgba:2e00/3400/3600/faff
+URxvt.cursorColor:      rgba:f500/7900/0000/faff
+URxvt.scrollColor:      rgba:2e00/3400/3600/faff
 
-urxvt*fading:           10
-urxvt*fadeColor:        black
-urxvt*font:             xft:DejaVu Sans Mono:pixelsize=10:autohinting=true
-urxvt*boldFont:         xft:DejaVu Sans Mono:pixelsize=10:autohinting=true
+URxvt.fading:           10
+URxvt.fadeColor:        black
+URxvt.font:             xft:DejaVu Sans Mono:pixelsize=10:autohinting=true
+URxvt.boldFont:         xft:DejaVu Sans Mono:pixelsize=10:autohinting=true
 
-urxvt*saveLines:        8192
-urxvt*geometry:         80x22
-urxvt*perl-lib:         /usr/lib/urxvt/perl/
-urxvt*perl-ext-common:  default,matcher,selection
-urxvt*url-launcher:     xdg-open
-urxvt*underlineUrls:    true
-urxvt*matcher.button:   2
-urxvt*cutchars:         "`'\",;@&*=|?()<>[]{}"
+URxvt.saveLines:        8192
+URxvt.geometry:         80x22
+URxvt.perl-lib:         /usr/lib/urxvt/perl/
+URxvt.perl-ext-common:  default,matcher,selection
+URxvt.url-launcher:     xdg-open
+URxvt.underlineUrls:    true
+URxvt.matcher.button:   2
+URxvt.cutchars:         "`'\",;@&*=|?()<>[]{}"
 URxvt.urgentOnBell:	true
 
 URxvt.tabbed.tabbar-fg: 15
@@ -60,8 +60,8 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg:    15
 URxvt.tabbed.tab-bg:    12
 
-urxvt*scrollBar:        true
-urxvt*scrollstyle:      plain
-urxvt*scrollBar_right:  true
-!urxvt.secondaryScroll:  true
-URxvt*secondaryWheel: true
+URxvt.scrollBar:        true
+URxvt.scrollstyle:      plain
+URxvt.scrollBar_right:  true
+!URxvt.secondaryScroll:  true
+URxvt.secondaryWheel: true
