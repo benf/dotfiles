@@ -23,8 +23,8 @@ else
   set autoindent        " auto indents next new line
 endif
 
-set cinoptions=t0,g0,(0,:0 
-  
+set cinoptions=t0,g0,(0,:0
+
 " searching
 set nohlsearch          " dont highlight all search results
 set incsearch           " increment search
@@ -51,7 +51,7 @@ set tags=./tags;
 " syntax highlighting
 syntax on               " enable syntax highlighting
 
-" set templatepath .vim/plugin/templates.vim 
+" set templatepath .vim/plugin/templates.vim
 let g:templatePath = "~/.config/vim/templates"
 
 " highlight redundant whitespaces and tabs.
@@ -92,7 +92,7 @@ autocmd BufRead /tmp/mutt-* set tw=72 spell
 " load build-in man page viewer command
 runtime ftplugin/man.vim
 
-" set bash syntax - pressed v in bash-vi mode 
+" set bash syntax - pressed v in bash-vi mode
 au BufRead,BufNewFile /tmp/bash-* let is_bash=1|setfiletype sh
 
 " mesa project specific settings
@@ -130,3 +130,8 @@ autocmd FileType tex colorscheme delek
 autocmd FileType asciidoc colorscheme inkpot
 
 set spellfile=$XDG_DATA_HOME/vim/spell.de.add,$XDG_DATA_HOME/vim/spell.en.add
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+" Show trailing whitespace and spaces before a tab:
+match ExtraWhitespace /\s\+$\| \+\ze\t/
