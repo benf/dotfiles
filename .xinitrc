@@ -11,10 +11,11 @@
 
 unset command
 
-if [ -S $XDG_RUNTIME_DIR/dbus/user_bus_socket ]
-then
-	export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket
-else
+#if [ -S $XDG_RUNTIME_DIR/dbus/user_bus_socket ]
+#then
+#	export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket
+##	command="systemd-run --user --scope --unit windowmanager -- "
+#else
 	# temporarily unset XDG_SESSION_COOKIE so consolekit launches a new session
 	realxdgcookie="$XDG_SESSION_COOKIE"
 	XDG_SESSION_COOKIE=
@@ -27,6 +28,6 @@ else
 	# restore XDG_SESSION_COOKIE
 	XDG_SESSION_COOKIE="$realxdgcookie"
 	unset realxdgcookie
-fi
+#fi
 
 exec $command $(XSESSION="${2:-${XSESSION}}" /etc/X11/chooser.sh)

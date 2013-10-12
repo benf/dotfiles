@@ -19,12 +19,12 @@ beautiful.init(os.getenv("HOME") .. "/.local/share/awesome/themes/zenburn/theme.
 
 local cmd = require("cmds")
 
-function spawn_once(unit, cmd)
-    awful.util.spawn("systemd-run --user --scope --unit " .. unit .. " -- " .. cmd, false)
-end
+--function spawn_once(unit, cmd)
+--    awful.util.spawn("systemd-run --user --scope --unit " .. unit .. " -- " .. cmd, false)
+--end
 
---local runonce = require("runonce")
---local spawn_once = function(unit, cmd) runonce.run(cmd) end
+local runonce = require("runonce")
+local spawn_once = function(unit, cmd) runonce.run(cmd) end
 
 spawn_once("urxvtd", cmd.urxvtd)
 spawn_once("pulseaudio", "start-pulseaudio-x11")
@@ -43,9 +43,9 @@ local spawn_from_awesome = awful.util.spawn
 --    spawn_from_awesome("launch " .. s, false)
 --end
 
-awful.util.spawn = function(cmd, n)
-    spawn_from_awesome("systemd-run --user --scope -- " .. cmd, n)
-end
+--awful.util.spawn = function(cmd, n)
+--    spawn_from_awesome("systemd-run --user --scope -- " .. cmd, n)
+--end
 awful.util.spawn("xsetroot -cursor_name left_ptr", false)
 
 -- Default modkey.
