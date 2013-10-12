@@ -127,7 +127,7 @@ set runtimepath=$XDG_DATA_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 colorscheme tango
 set background=light
 autocmd FileType tex colorscheme delek
-autocmd FileType asciidoc colorscheme inkpot
+"autocmd FileType asciidoc colorscheme inkpot
 
 set spellfile=$XDG_DATA_HOME/vim/spell.de.add,$XDG_DATA_HOME/vim/spell.en.add
 
