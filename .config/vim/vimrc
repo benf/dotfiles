@@ -140,3 +140,10 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" alt mapping seems to only work in gvim
+:map <A-h> :tabprevious<cr>
+:map <A-l> :tabnext<cr>
+:map <A-Left> :tabprevious<cr>
+:map <A-Right> :tabnext<cr>
+:map <XF86Forward> :tabnext<cr>
