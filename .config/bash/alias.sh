@@ -3,7 +3,6 @@ alias ebc="[[ -f /etc/profile.d/bash-completion.sh ]] && source /etc/profile.d/b
 
 alias player="/home/ben/coding/cpp/audio/player"
 alias packages="eix -I --format \" \" |  grep --color=never Found.*matches."
-alias gplay="gnome-mplayer"
 
 # list hidden files  - if directory do NOT show contents and dont display ".."
 alias lh="ls -d .[^.]*"
@@ -16,18 +15,12 @@ alias s="r 60 17"
 alias vim="r; vim"
 alias man="r; man"
 
-alias ccat="highlight --ansi"
-alias hhtml="highlight --wrap --xhtml --linenumbers --anchors --linenumbers --anchor-prefix=line"
-
-alias use="quse -D"
-alias tv="~/.scripts/tv.sh"
-
 alias systemctl="systemctl --full"
 
 # typos
 alias sl=ls
 
-# connect to 
+# connect to
 alias syn_c="ssh -f -N -R 24801:127.0.0.1:24800"
 
 alias le="libtool --mode=execute"
