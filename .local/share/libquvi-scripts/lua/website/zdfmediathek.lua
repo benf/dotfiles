@@ -8,7 +8,7 @@ function ident(self)
     r.categories = C.proto_rtmp
     local U      = require 'quvi/util'
     r.handles    = U.handles(self.page_url, {r.domain},
-                             {"/ZDFmediathek/beitrag/video/"})
+                             {"/ZDFmediathek/"})
     return r
 end
 
@@ -23,8 +23,8 @@ end
 function parse(self)
     self.host_id  = "zdfmediathek"
 
-    self.id = self.page_url:match("/ZDFmediathek/beitrag/video/(%d+)")
-                or error ("no match: media id")
+    self.id = self.page_url:match("/ZDFmediathek/#?/?beitrag/video/(%d+)")
+        or error ("no match: media id")
 
     local xmlwebservice_url = "http://www.zdf.de/ZDFmediathek/xmlservice/web/beitragsDetails?id=" .. self.id
 
