@@ -39,7 +39,13 @@ function parse(self)
 
     self.thumbnail_url = c:match('<teaserimage alt="[^"]*" key="946x532">([^<]*)</teaserimage>')
 
-    self.url = { c:match('<quality>veryhigh</quality>[ \n]*<url>(http://nrodl.zdf.de/[^<]*\.mp4)</url>') }
+    local url = c:match('<quality>veryhigh</quality>[ \n]*<url>(http://nrodl.zdf.de/[^<]*\.mp4)</url>')
+
+    if (c:match('<width>1024</width>')) then
+        url = string.gsub(url, "1456k_p13v11", "2256k_p14v11")
+    end
+
+    self.url = { url }
 
     return self
 end
