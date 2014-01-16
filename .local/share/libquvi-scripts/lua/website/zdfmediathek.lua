@@ -56,10 +56,7 @@ end
 
 function ZDFmediathek.table_add_format(t, fmt)
     -- Only accessible with HBBTV user agent, lets drop it
-    -- FIXME: store facets in fmt and match for <facet>hbbtv</facet>?
-    if fmt.url:match('http://www.metafilegenerator.de/') then
-        return
-    end
+    if fmt.facets and fmt.facets:match('<facet>hbbtv</facet>') then return end
 
     table.insert(t, fmt)
 
@@ -103,8 +100,9 @@ function ZDFmediathek.iter_formats(c)
         f = { type = type, container = container, protocol = protocol,
               quality = quality, url = url }
         -- width and height are not available for live streams -> may be nil
-        f.width = tonumber(data:match("<width>(.-)</width>"))
-        f.height = tonumber(data:match("<height>(.-)</height>"))
+        f.width = tonumber(data:match('<width>(.-)</width>'))
+        f.height = tonumber(data:match('<height>(.-)</height>'))
+        f.facets = data:match('<facets>(.+)</facets>')
         ZDFmediathek.table_add_format(t, f)
     end
 
