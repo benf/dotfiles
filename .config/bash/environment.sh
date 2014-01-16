@@ -100,6 +100,8 @@ export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 
 export EIXRC="${XDG_CONFIG_HOME}/eixrc/eixrc"
 
+export DVDCSS_CACHE="${XDG_CACHE_HOME}/dvdcss/"
+
 # matlow wont start on some system without this
 export LIBXCB_ALLOW_SLOPPY_LOCK=true
 
