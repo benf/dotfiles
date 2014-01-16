@@ -82,7 +82,7 @@ function ZDFmediathek.table_add_format(t, fmt)
 
     if fmt.quality == "hd" and fmt.type == "h264_aac_mp4_rtmp_zdfmeta_http" then
         local new = { type = "h264_aac_mp4_http_na_na", container = "mp4",
-                      proto = "http" }
+                      protocol = "http" }
         new.url = ZDFmediathek.http_mp4_from_meta(fmt.url)
         if new.url then
             table.insert(t, ZDFmediathek.merge_format(fmt, new))
@@ -94,7 +94,7 @@ end
 
 function ZDFmediathek.iter_formats(c)
     local p = {
-        '<formitaet basetype="((.-)_(.-)_(.-)_(.-)_.-)".->',
+        '<formitaet basetype="(.-_.-_(.-)_(.-)_.-)".->',
           '<quality>(.-)</quality>',
           '<url>(.-)</url>',
           '(.-)',
@@ -102,10 +102,10 @@ function ZDFmediathek.iter_formats(c)
     }
     local t = {}
 
-    for type,vcodec,acodec,container,proto,quality,url,data in
+    for type,container,protocol,quality,url,data in
         c:gmatch(table.concat(p, '%s*')) do
-        f = { type = type, container = container, url = url, vcodec = vcodec,
-              acodec = acodec, proto = proto, quality = quality }
+        f = { type = type, container = container, protocol = protocol,
+              quality = quality, url = url }
         -- width and height are not available for live streams -> may be nil
         f.width = tonumber(data:match("<width>(.-)</width>"))
         f.height = tonumber(data:match("<height>(.-)</height>"))
@@ -211,7 +211,7 @@ ZDFmediathek.choose_default = ZDFmediathek.choose_best
 
 function ZDFmediathek.to_s(t)
     return table.concat({ t.container,
-                          (t.proto ~= "http") and '_' .. t.proto or '',
+                          (t.protocol ~= "http") and '_' .. t.protocol or '',
                           '_', (t.height) and t.height ..'p' or t.quality })
 end
 
