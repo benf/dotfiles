@@ -1,3 +1,25 @@
+
+-- libquvi-scripts
+-- Copyright (C) 2014  Benjamin Franzke <benjaminfranzke@googlemail.com>
+--
+-- This file is part of libquvi-scripts <http://quvi.sourceforge.net/>.
+--
+-- This library is free software; you can redistribute it and/or
+-- modify it under the terms of the GNU Lesser General Public
+-- License as published by the Free Software Foundation; either
+-- version 2.1 of the License, or (at your option) any later version.
+--
+-- This library is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+-- Lesser General Public License for more details.
+--
+-- You should have received a copy of the GNU Lesser General Public
+-- License along with this library; if not, write to the Free Software
+-- Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+-- 02110-1301  USA
+--
+
 local ZDFmediathek = {} -- Utility functions unique to this script.
 
 -- Identify the script.
@@ -22,7 +44,9 @@ function query_formats(self)
 
     table.sort(fmts, ZDFmediathek.compare_format)
     for _,f in pairs(fmts) do
-        table.insert(r, ZDFmediathek.to_s(f))
+        local s = ZDFmediathek.to_s(f)
+        -- There may be duplicates -> filter out
+        if s ~= r[#r] then table.insert(r,s) end
     end
     self.formats = table.concat(r, "|")
 
@@ -73,6 +97,8 @@ function ZDFmediathek.table_add_format(t, fmt)
         end
     end
 
+    -- HD quality movies are not listed with an http url.
+    -- But one can build it from the rtmp URL given in a .meta file:
     if fmt.quality == "hd" and fmt.type == "h264_aac_mp4_rtmp_zdfmeta_http" then
         local new = { type = "h264_aac_mp4_http_na_na", container = "mp4",
                       protocol = "http" }
