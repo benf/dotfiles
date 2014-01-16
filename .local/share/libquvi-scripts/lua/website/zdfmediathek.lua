@@ -60,10 +60,6 @@ function ZDFmediathek.table_add_format(t, fmt)
     if fmt.url:match('http://www.metafilegenerator.de/') then
         return
     end
-    -- The livestream smil URL is not accessible (404)
-    if fmt.type == "h264_aac_mp4_rtmp_smil_http" then
-        return
-    end
 
     table.insert(t, fmt)
 
