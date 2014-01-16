@@ -4,7 +4,7 @@ function ident(self)
     local C      = require 'quvi/const'
     local r      = {}
     r.domain     = "ulmen%.tv"
-    r.formats    = "default|best"
+    r.formats    = "default"
     r.categories = C.proto_rtmp
     local U      = require 'quvi/util'
     r.handles    = U.handles(self.page_url, {r.domain}, {"/.+/%d+/.+$"})
@@ -13,7 +13,7 @@ end
 
 -- Query available formats.
 function query_formats(self)
-    self.formats = "default|best"
+    self.formats = "default"
 
     return self
 end
