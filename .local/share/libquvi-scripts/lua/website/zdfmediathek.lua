@@ -117,6 +117,7 @@ function ZDFmediathek.iter_formats(c)
 end
 
 function ZDFmediathek.get_config(self)
+    local U = require 'quvi/util'
     self.host_id  = "zdfmediathek"
 
     self.id = self.page_url:match('/ZDFmediathek/#?/?beitrag/video/(%d+)') or
@@ -128,16 +129,16 @@ function ZDFmediathek.get_config(self)
 
     local c = quvi.fetch(table.concat(xml), {fetch_type='config'})
     if not(c:match('<statuscode>ok</statuscode>')) then
-        error(table.concat({'error:', xml_get(c, 'statuscode', false), '-',
-                                      xml_get(c, 'debuginfo', false)}, ' '))
+        error(table.concat({'error:', U.xml_get(c, 'statuscode', false), '-',
+                                      U.xml_get(c, 'debuginfo', false)}, ' '))
     end
 
-    self.title = xml_get(c, 'title', false)
+    self.title = U.xml_get(c, 'title', false)
     self.thumbnail_url =
             c:match('<teaserimage alt=".-" key="946x532">([^<]+)</teaserimage>')
 
     -- Quirks for broken stream descriptors
-    if xml_get(c, 'type', false) == "livevideo" then
+    if U.xml_get(c, 'type', false) == "livevideo" then
         -- The server returns 403 without ?hdcore
         c = c:gsub('manifest%.f4m</url>', 'manifest.f4m?hdcore</url>')
 
@@ -182,7 +183,7 @@ function ZDFmediathek.rank_type(f)
 end
 
 function ZDFmediathek.rank_quality(f)
-    local r = {
+    local rank = {
         hd = 6, veryhigh_ext = 5, veryhigh = 4, high = 3, med = 2, low = 1
     }
     return rank[f.quality] and rank[f.quality] or 0
@@ -217,15 +218,6 @@ function ZDFmediathek.to_s(t)
                          (t.proto ~= "http") and '_' .. t.proto or '',
                          t.quality,
                          (t.height) and '_' .. t.height ..'p' or '')
-end
-
-
---For very simple XML value extraction.
-function xml_get(d, e, is_cdata)
-    local p = is_cdata and '.-%w+%[(.-)%].-' or '(.-)'
-    local t = {'<',e,'>', p, '</',e,'>'}
-    return d:match(table.concat(t))
-              or error(table.concat({'no match: element: ',e}))
 end
 
 -- vim: set ts=4 sw=4 tw=72 expandtab:
