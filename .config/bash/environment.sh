@@ -102,4 +102,4 @@ export EIXRC="${XDG_CONFIG_HOME}/eixrc/eixrc"
 
 export DVDCSS_CACHE="${XDG_CACHE_HOME}/dvdcss/"
 
-export BROWSER=luakit
+#export BROWSER=luakit
