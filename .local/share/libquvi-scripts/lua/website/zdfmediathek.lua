@@ -73,8 +73,7 @@ function ZDFmediathek.table_add_format(t, fmt)
     -- of better quality than "veryhigh" classified http streams.
     -- Example: 2256k instead of 1496k
     if fmt.quality == "high" and fmt.type == "h264_aac_f4f_http_f4m_http" then
-        local new = { type = "h264_aac_mp4_http_na_na",
-                      container = "mp4", quality = "veryhigh_ext" }
+        local new = { type = "h264_aac_mp4_http_na_na", container = "mp4" }
         new.url = ZDFmediathek.http_mp4_from_f4m(fmt.url)
         if new.url then
             table.insert(t, ZDFmediathek.merge_format(fmt, new))
@@ -158,14 +157,14 @@ end
 
 function ZDFmediathek.http_mp4_from_f4m(f4m_url)
     local c = quvi.fetch(f4m_url, {fetch_type='config'})
+    local p = '<media href="(.-)/manifest%.f4m%?hdcore" bitrate="(%d+)"/>'
     local max_bitrate = 0
     local path = nil
 
-    for p, bitrate in c:gmatch('<media href="(.-)/manifest%.f4m%?hdcore"'..
-                               ' bitrate="(%d+)"/>') do
+    for _path, bitrate in c:gmatch(p) do
         if tonumber(bitrate) > max_bitrate then
             max_bitrate = tonumber(bitrate)
-            path = p
+            path = _path
         end
     end
 
@@ -183,9 +182,7 @@ function ZDFmediathek.rank_type(f)
 end
 
 function ZDFmediathek.rank_quality(f)
-    local rank = {
-        hd = 6, veryhigh_ext = 5, veryhigh = 4, high = 3, med = 2, low = 1
-    }
+    local rank = { hd = 5, veryhigh = 4, high = 3, med = 2, low = 1 }
     return rank[f.quality] and rank[f.quality] or 0
 end
 
@@ -213,11 +210,9 @@ end
 ZDFmediathek.choose_default = ZDFmediathek.choose_best
 
 function ZDFmediathek.to_s(t)
-    return string.format("%s%s_%s%s",
-                         t.container,
-                         (t.proto ~= "http") and '_' .. t.proto or '',
-                         t.quality,
-                         (t.height) and '_' .. t.height ..'p' or '')
+    return table.concat({ t.container,
+                          (t.proto ~= "http") and '_' .. t.proto or '',
+                          '_', (t.height) and t.height ..'p' or t.quality })
 end
 
 -- vim: set ts=4 sw=4 tw=72 expandtab:
