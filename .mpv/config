@@ -1,0 +1,13 @@
+ao=pulse
+channels=6
+softvol=no
+vo=vaapi
+
+[vo.vaapi]
+hwdec=vaapi
+
+[protocol.dvd]
+profile-desc="profile for dvd:// streams"
+vf=pp=hb/vb/dr/al/fd
+vo=vaapi
+alang=ger,de,deu,
