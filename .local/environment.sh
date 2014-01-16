@@ -5,11 +5,7 @@ doecho() {
 
 home=~ben
 
-if [ "$HOSTNAME" = "blx" ]; then
 doecho export prefix=$home/.local
-else
-doecho export prefix=$home/dist
-fi
 
 doecho export 'ACLOCAL="aclocal -I '$prefix'/share/aclocal"'
 
