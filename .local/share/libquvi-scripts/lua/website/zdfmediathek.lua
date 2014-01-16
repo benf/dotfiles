@@ -83,7 +83,7 @@ function ZDFmediathek.table_add_format(t, fmt)
     if fmt.quality == "hd" and fmt.type == "h264_aac_mp4_rtmp_zdfmeta_http" then
         local new = { type = "h264_aac_mp4_http_na_na", container = "mp4",
                       protocol = "http" }
-        new.url = ZDFmediathek.http_mp4_from_meta(fmt.url)
+        new.url = ZDFmediathek.http_mp4_from_zdfmeta(fmt.url)
         if new.url then
             table.insert(t, ZDFmediathek.merge_format(fmt, new))
         end
@@ -148,7 +148,7 @@ function ZDFmediathek.get_config(self)
     return c
 end
 
-function ZDFmediathek.http_mp4_from_meta(meta_url)
+function ZDFmediathek.http_mp4_from_zdfmeta(meta_url)
     local c = quvi.fetch(meta_url, {fetch_type='config'})
     local path = c:match("mp4:(.-%.mp4)")
 
