@@ -23,24 +23,59 @@ function parse(qargs)
   return qargs
 end
 
+-- http://stackoverflow.com/questions/3554315/lua-base-converter
+function Xvidstage.basen(n,b)
+    n = math.floor(n)
+    if not b or b == 10 then return tostring(n) end
+    local digits = "0123456789abcdefghijklmnopqrstuvwxyz"
+    local t = {}
+    repeat
+        local d = (n % b) + 1
+        n = math.floor(n / b)
+        table.insert(t, 1, digits:sub(d,d))
+    until n == 0
+    return table.concat(t)
+end
+
+function Xvidstage.unpack_minjs(minjs)
+  p,a,c,k = minjs:match("return p}%('(.-\\'%);)',(%d+),(%d+),'(.-)'")
+
+  base = tonumber(a)
+  -- num = tonumber(c) -- not needed
+  code = p:gsub("\\'", "'")
+
+  data = {}
+  for w in (k:gsub("||", "| |")..'|'):gmatch("([^|]+)|") do
+    table.insert(data, w)
+  end
+
+  for i=1,#data do
+    if data[i] ~= " " then
+      local s = Xvidstage.basen(i-1, base)
+      code = code:gsub("([^a-z0-9])"..s.."([^a-z0-9])", "%1"..data[i].."%2")
+    end
+  end
+
+  return code
+end
+
 function Xvidstage.iter_streams(c, qargs)
   local S = require 'quvi/stream'
 
-  local mp3_url = c:match("addVariable%('file','(.-%.mp3)'%)")
+  local mp3_url = c:match("addVariable%('file','(.+/)[^/]+%.mp3'%)")
   if mp3_url then
-    local s = S.stream_new(mp3_url)
+    local s = S.stream_new(table.concat({mp3_url,qargs.title}))
     s.container = "mp3"
     return { s }
   end
 
-  local hash_pattern = string.rep('[a-z0-9]', 56)
-  container, hash, port = c:match('|([^|]-)|(' .. hash_pattern .. ')|(%d-)|')
-  ip4, ip3, ip2, ip1 = c:match('|(%d-)|+(%d-)|+(%d-)|+(%d-)|')
+  local packed = c:match("<div id=\"player_code\"><script[^>]+>([^\n]+)")
+  c = Xvidstage.unpack_minjs(packed)
 
-  local ip = table.concat({ip1,ip2,ip3,ip4},'.')
-  local url = { "http://", ip , ':', port, '/d/', hash, '/', qargs.title }
-  local s = S.stream_new(table.concat(url))
-  s.container = container
+  local id_pattern = string.rep('[a-z0-9]', 56)
+  url,ext = c:match('["\'](http://[^"\']+/d/'..id_pattern..'/)video%.(.-)["\']')
+  local s = S.stream_new(table.concat({url, qargs.title}))
+  s.container = ext
   return { s }
 end
 
