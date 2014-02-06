@@ -85,6 +85,7 @@ function Xvidstage.can_parse_url(qargs)
 
   return t and t.scheme and t.scheme:lower():match('^http$')
            and t.host and t.host:lower():match('xvidstage%.com$')
+           and t.path and t.path:match("^/[a-z0-9]+")
            and true or false
 end
 
