@@ -1,7 +1,7 @@
 ao=pulse
 channels=6
 softvol=no
-vo=vaapi
+vo=vaapi,xv
 
 [vo.vaapi]
 hwdec=vaapi
