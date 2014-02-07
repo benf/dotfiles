@@ -15,6 +15,7 @@ function parse(qargs)
   local c = quvi.http.fetch(qargs.input_url).data
   qargs.title = c:match('<div class="video_title">(.-)</div>')
   local iframe_url = c:match('<iframe[^>]+src="(http://play.flashx.tv/.-)"')
+  if not(iframe_url) then error("file not available") end
 
   c = quvi.http.fetch(iframe_url).data
   local p = { yes = c:match('name="yes"[^>]+value="(.-)"'),
