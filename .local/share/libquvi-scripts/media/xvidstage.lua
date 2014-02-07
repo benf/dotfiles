@@ -53,7 +53,9 @@ function Xvidstage.unpack_minjs(minjs)
   for i=1,#data do
     if data[i] ~= " " then
       local s = Xvidstage.basen(i-1, base)
-      code = code:gsub("([^a-z0-9])"..s.."([^a-z0-9])", "%1"..data[i].."%2")
+      repeat
+        code, count = code:gsub("([^a-zA-Z0-9])"..s.."([^a-zA-Z0-9])", '%1'..data[i]..'%2')
+      until count == 0
     end
   end
 
