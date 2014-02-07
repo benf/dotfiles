@@ -12,9 +12,10 @@ end
 
 -- Parse media URL.
 function parse(qargs)
+  local R = require 'soup_request'
   local p = { op = "download1", method_free = "1",
               id = qargs.input_url:match('xvidstage.com/([^/]+)') }
-  local c = Xvidstage.request(qargs.input_url, "POST", p)
+  local c = R.request(qargs.input_url, "POST", p)
 
   qargs.id = p.id
   qargs.title = c:match('Dateiname:</td><td[^>]*>(.-)</td>')
@@ -87,40 +88,6 @@ function Xvidstage.can_parse_url(qargs)
            and t.host and t.host:lower():match('xvidstage%.com$')
            and t.path and t.path:match("^/[a-z0-9]+")
            and true or false
-end
-
-function Xvidstage.request(url, method, params)
-  local lgi = require 'lgi'
-  local Soup = lgi.Soup
-  local req = lgi.Soup.Session():request_http_uri(method, Soup.URI(url))
-
-  p = {}
-  for k,v in pairs(params) do
-    table.insert(p, table.concat({ k, '=', v }))
-  end
-  p = table.concat(p, '&')
-
-  if method == "POST" then
-    req:get_message():set_request("application/x-www-form-urlencoded", 0, p, #p)
-  end
-
-  function read(stream)
-    local Bytes = require 'bytes'
-    local buffer = Bytes.new(4096)
-    local out = {}
-
-    while true do
-      local size = stream:read(buffer)
-      if size <= 0 then
-        break;
-      end
-      table.insert(out, tostring(buffer):sub(1, size))
-    end
-
-    return table.concat(out)
-  end
-
-  return read(req:send())
 end
 
 -- vim: set ts=2 sw=2 tw=72 expandtab:
