@@ -69,11 +69,11 @@ function Xvidstage.iter_streams(c, qargs)
     return { s }
   end
 
-  local packed = c:match("<div id=\"player_code\"><script[^>]+>([^\n]+)")
+  local pattern = string.rep('[a-z0-9]', 56)
+  local packed = c:match("(function%(p,a,c,k,e,d%)[^\n]+"..pattern.."[^\n]+)%)")
   c = Xvidstage.unpack_minjs(packed)
 
-  local id_pattern = string.rep('[a-z0-9]', 56)
-  url,ext = c:match('["\'](http://[^"\']+/d/'..id_pattern..'/)video%.(.-)["\']')
+  url,ext = c:match('["\'](http://[^"\']+/d/'..pattern..'/)video%.(.-)["\']')
   local s = S.stream_new(table.concat({url, qargs.title}))
   s.container = ext
   return { s }
