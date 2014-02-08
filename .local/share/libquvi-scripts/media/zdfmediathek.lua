@@ -124,7 +124,7 @@ function parse(qargs)
   local c = quvi.http.fetch(table.concat(xml)).data
   local x = P.parse(c)
   local r = ZDFmediathek.extract_schema(x, ZDFmediathek.xmlservice_schema)
-  io.stderr:write(dump(r) .. '\n')
+  --io.stderr:write(dump(r) .. '\n')
 
   if r.status.statuscode ~= "ok" then
     error(table.concat({'error: ', r.status.statuscode, ' - ', r.status.debuginfo or ''}))
