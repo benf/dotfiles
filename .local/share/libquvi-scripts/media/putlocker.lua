@@ -34,10 +34,7 @@ function Putlocker.iter_streams(c, qargs)
   local U = require 'socket.url'
   local t = U.parse(qargs.input_url)
 
-  --  url,container = c:match('file:%s*"(.-/)v%.(.-)"')
-
   local s = S.stream_new(table.concat({"http://", t.host, url}))
-  --s.container = containehttp://www.sockshare.com/file/ACCFBF032A3CD770r
   return { s }
 end
 
