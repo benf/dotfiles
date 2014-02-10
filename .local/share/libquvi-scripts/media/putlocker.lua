@@ -19,7 +19,7 @@ function parse(qargs)
   c = R.request(qargs.input_url, "POST", p)
 
   qargs.id = qargs.input_url:match("file/([A-Z0-9]+)")
-  qargs.title = c:match('<div class="site-content">[^<]+<h1>(.-)<strong>')
+  qargs.title = c:match('var name = "(.-)"')
   qargs.streams = Putlocker.iter_streams(c, qargs)
 
   return qargs
