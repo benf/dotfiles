@@ -19,9 +19,7 @@ function parse(qargs)
   c = R.request(qargs.input_url, "POST", p)
 
   qargs.id = qargs.input_url:match("file/([A-Z0-9]+)")
-  qargs.title = c:match('<div class="site-content">%s*<h1>(.-)<strong>')
-  --qargs.thumb_url = c:match('property="og:image"%s+content="(.-)"')
-  --qargs.duration_ms = tonumber(c:match('duration:%s*"(%d+)"') or 0) * 1000
+  qargs.title = c:match('<div class="site-content">[^<]+<h1>(.-)<strong>')
   qargs.streams = Putlocker.iter_streams(c, qargs)
 
   return qargs
