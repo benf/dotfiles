@@ -21,7 +21,7 @@ function parse(qargs)
   end
 
   qargs.id = qargs.input_url:match('http://(.-)%.radio%.de')
-  qargs.title = c:match('property="og:title" content="(.-)">')
+  qargs.title = c:match('property="og:title" content="(.-)"')
   qargs.thumb_url = c:match('property="og:image" content="(.-)"')
 
   local url = c:match('_getPlaylist.*"stream":"(.-)"')
