@@ -258,7 +258,7 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "x", function () spawn_from_awesome(terminal, false) end),
     awful.key({ modkey,           }, "a", function () awful.util.spawn(terminal .. " -geometry 100x25 -e pa-sink-ctl" ) end),
-    awful.key({ modkey,           }, "w", function () awful.util.spawn("luakit") end),
+    awful.key({ modkey,           }, "w", function () awful.util.spawn("chromium") end),
     awful.key({ modkey,           }, "p", function () awful.util.spawn("pidgin") end),
     awful.key({ modkey,           }, "i", function () awful.util.spawn(terminal .. " -geometry 100x30 -e " .. os.getenv("HOME") .. "/.scripts/start_remote_irssi.sh") end),
     

@@ -104,5 +104,3 @@ export DVDCSS_CACHE="${XDG_CACHE_HOME}/dvdcss/"
 
 # Needed for libquvi 0.9 (0.4 automatically searches here)
 export LIBQUVI_SCRIPTS_DIR="${HOME}/.local/share/libquvi-scripts/"
-
-#export BROWSER=luakit
