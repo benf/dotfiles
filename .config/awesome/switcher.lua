@@ -5,8 +5,8 @@
 -- Licensed under the GPL-3
 ----------------------------------------------------------------
 -- To use this module add:
---   require("switcher")
--- to the top of your rc.lua. 
+--   local switcher = require("switcher")
+-- to the top of your rc.lua
 --
 -- And add the following to your global keybindings:
 --   awful.key({ modkey, }, "Tab", function()
@@ -87,7 +87,7 @@ local function switcher_end()
 	capi.client.focus = c
 end
 
-function switch(modifiers, key, event)
+local function switch(modifiers, key, event)
 	if event == "press" and key == state.key_next then
 		switcher_next(1)
 	elseif event == "press" and key == state.key_prev then
@@ -112,4 +112,3 @@ function start(rel, key_mod, key_next, key_prev)
 	switcher_next(rel)
 	capi.keygrabber.run(switch)
 end
-
