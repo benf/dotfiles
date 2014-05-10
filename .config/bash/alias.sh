@@ -31,3 +31,5 @@ alias nsmlab-virsh="virsh -c qemu+ssh://root@nsmlab.et.hs-wismar.de:1337/system"
 alias nsmlab-virt-viewer="virt-viewer -c qemu+ssh://root@nsmlab.et.hs-wismar.de:1337/system"
 
 alias cstrike="steam steam://rungameid/10"
+
+[ -f ~/.config/bash/alias-qbus.sh ] && source ~/.config/bash/alias-qbus.sh
