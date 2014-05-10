@@ -259,6 +259,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "x", function () spawn_from_awesome(terminal, false) end),
     awful.key({ modkey,           }, "a", function () awful.util.spawn(terminal .. " -geometry 100x25 -e pa-sink-ctl" ) end),
     awful.key({ modkey,           }, "w", function () awful.util.spawn("chromium") end),
+    awful.key({ modkey,           }, "n", function () awful.util.spawn("nautilus") end),
+    awful.key({ modkey,           }, "v", function () awful.util.spawn("virt-manager --no-fork") end),
     awful.key({ modkey,           }, "p", function () awful.util.spawn("pidgin") end),
     awful.key({ modkey,           }, "i", function () awful.util.spawn(terminal .. " -geometry 100x30 -e " .. os.getenv("HOME") .. "/.scripts/start_remote_irssi.sh") end),
     
@@ -310,12 +312,12 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
-    awful.key({ modkey,           }, "n",
-        function (c)
-            -- The client currently has the input focus, so it cannot be
-            -- minimized, since minimized clients can't have the focus.
-            c.minimized = true
-        end),
+    --awful.key({ modkey,           }, "n",
+    --    function (c)
+    --        -- The client currently has the input focus, so it cannot be
+    --        -- minimized, since minimized clients can't have the focus.
+    --        c.minimized = true
+    --    end),
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
