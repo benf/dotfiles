@@ -20,5 +20,8 @@
 [push]
 	default = simple
 
+[color]
+	ui = false
+
 [apply]
 	whitespace = strip
