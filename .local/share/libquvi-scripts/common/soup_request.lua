@@ -25,6 +25,7 @@ function M.request(url, method, params)
 
   if method == "POST" then
     req:get_message():set_request("application/x-www-form-urlencoded", 0, p, #p)
+    req:get_message().request_headers:append('Referer', url)
   end
 
   function read(stream)
