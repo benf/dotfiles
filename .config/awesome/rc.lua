@@ -244,7 +244,7 @@ end
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
-    awful.button({ }, 1, function () mymainmenu:close() end),
+    awful.button({ }, 1, function () mymainmenu:hide() end),
     awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewprev),
     awful.button({ }, 5, awful.tag.viewnext)
@@ -310,7 +310,7 @@ globalkeys = awful.util.table.join(
     awful.key({}, "XF86AudioMute", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_mute.sh output", false) end),
     awful.key({}, "XF86Launch2", function () awful.util.spawn(os.getenv("HOME") .. "/.scripts/toggle_mute.sh input", false) end),
 
-    awful.key({ modkey, "Control" }, "r", awesome.restart),
+    awful.key({ modkey, "Shift"   }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
