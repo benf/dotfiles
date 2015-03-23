@@ -32,4 +32,13 @@ alias nsmlab-virt-viewer="virt-viewer -c qemu+ssh://root@nsmlab.et.hs-wismar.de:
 
 alias cstrike="steam steam://rungameid/10"
 
+alias ssh="TERM=xterm ssh"
+
+alias vpn-kill="nmcli dev disconnect tun0"
+alias vpn-qbus="vpn-kill; nmcli con up id qbus-vpn"
+alias vpn-lallf="vpn-kill; nmcli con up id lallf"
+alias vpn-home="vpn-kill; nmcli con up id home.bnfr.net"
+
+alias revolver="virt-viewer -c qemu+ssh://qbus@192.168.40.11/system revolver"
+
 [ -f ~/.config/bash/alias-qbus.sh ] && source ~/.config/bash/alias-qbus.sh
