@@ -1,0 +1,9 @@
+[submodule ".config/vim/bundle/nerdtree"]
+	path = .config/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".config/vim/bundle/vim-pathogen"]
+	path = .config/vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule ".config/vim/bundle/vim-colorschemes"]
+	path = .config/vim/bundle/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git

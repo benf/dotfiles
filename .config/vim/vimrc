@@ -5,6 +5,10 @@
 "	set lines=35
 "end
 
+set dir=/home/ben/.cache/vim/swp/
+set runtimepath=$XDG_CONFIG_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 " basics
 set nocompatible        " use vim defaults
 set mouse=a             " make sure mouse is used in all cases.
@@ -51,8 +55,7 @@ set tags=./tags;
 " syntax highlighting
 syntax on               " enable syntax highlighting
 
-" set templatepath .vim/plugin/templates.vim
-let g:templatePath = "~/.config/vim/templates"
+let NERDTreeShowHidden=1
 
 " highlight redundant whitespaces and tabs.
 "highlight RedundantSpaces ctermbg=red guibg=red
@@ -86,6 +89,11 @@ vnoremap ; :
 " strip ^M linebreaks from dos formatted files
 map M :%s/$//g
 
+" use Tab to switch between current and last buffer
+nmap <Tab> :b#<CR>
+
+map <C-n> :NERDTreeToggle<CR>
+
 " mutt rules
 autocmd BufRead /tmp/mutt-* set tw=72 spell
 
@@ -117,22 +125,21 @@ autocmd BufNewFile,BufRead /home/ben/htdocs/mutti-web/*{xsl,xml} set sw=2 ts=8 s
 " settings for web projects
 autocmd BufNewFile,BufRead /home/ben/src/qbcontact/*{php,html} set sw=4 ts=4 sts=4
 
+" settings for systemd
+autocmd BufNewFile,BufRead /home/ben/src/systemd/* set sw=8 ts=8 sts=8 et
+autocmd BufNewFile,BufRead /home/ben/src/systemd/man/*.xml set sw=2 ts=2 sts=2 et
+
 " vimmanpager stuff
 " disable line numbers when using vim as manpager
 autocmd FileType man set nonumber nohlsearch nohlsearch
 
-" its important that viminfo is set at the end
-" some options seem to overwrite this (history..)
-set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
-set dir=$XDG_CACHE_HOME/vim/swp/
-set runtimepath=$XDG_DATA_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+"colorscheme tango
+"set background=light
 
-colorscheme tango
-set background=light
 autocmd FileType tex colorscheme delek
 "autocmd FileType asciidoc colorscheme inkpot
 
-set spellfile=$XDG_DATA_HOME/vim/spell.de.add,$XDG_DATA_HOME/vim/spell.en.add
+set spellfile=$XDG_CONFIG_HOME/vim/spell/spell.de.add,$XDG_CONFIG_HOME/vim/spell/spell.en.add
 
 
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -150,3 +157,19 @@ autocmd BufWinLeave * call clearmatches()
 :map <A-Left> :tabprevious<cr>
 :map <A-Right> :tabnext<cr>
 :map <XF86Forward> :tabnext<cr>
+
+call pathogen#infect()
+
+colorscheme tangoX
+
+set noerrorbells
+set visualbell
+" Turn of visualbell screen flashing
+set t_vb=
+"
+" its important that viminfo is set at the end
+" some options seem to overwrite this (history..)
+"set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+"set dir=$XDG_CACHE_HOME/vim/swp/
+"set runtimepath=$XDG_DATA_HOME/vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+set viminfo+=n/home/ben/.cache/vim/viminfo
