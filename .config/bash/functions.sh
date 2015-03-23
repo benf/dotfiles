@@ -76,10 +76,6 @@ start() {
 	bash -c "source ~/.bashrc.functions; ${@} >> /dev/null 2>&1"
 }
 
-ts() {
-	start /opt/bin/TeamSpeak $@
-}
-
 eworld() {
 	local packages=$(/usr/bin/eix -u --only-names)
 	[[ -n $packages ]] && /usr/bin/sudo /usr/bin/emerge --verbose --ask --update --oneshot $packages
@@ -103,26 +99,31 @@ tstart() {
 }
 
 up() {
-	local server=netdirekt
+	local server=bnfr.net
 
-	if [[ -f $1 ]]; then 
-		local rand=`date +%s | md5sum | sed -n 's/^\(...\).*$/\1/p'`
+	if [[ -f $1 ]]; then
+		local rand=`date +%s | md5sum | sed -n 's/^\(.....\).*$/\1/p'`
 		local r="${rand}"
 		local s=`basename $1`
 
+		[[ -n $2 ]] && s="$2"
+
 		local name="$r-$s"
+		local nicename="$r/$s"
 		# local name="${rand}-`basename $1`"
-		scp -q $1 $server:"/home/benjamin/uploads/${name}" || exit
+		scp -q $1 $server:"/home/ben/htdocs/uploads/${name}" || exit
 
-		local cmd="sudo chown lighttpd:lighttpd /home/benjamin/uploads/${name}"
-		ssh -q $server $cmd || exit
+		#local cmd="sudo chown lighttpd:lighttpd /home/benjamin/uploads/${name}"
+		#ssh -q $server $cmd || exit
 
-		local ext=$(echo $1 | sed "s/^.*\.\([^\.]*\)$/\\1/")
-		local types="dummy txt $(sed -n "s/^\$ext(\(.*\))=\(.*\)$/\\1 \\2/p" /etc/highlight/filetypes.conf) dummy"
+		local url="https://bnfr.net/~ben/uploads/${nicename}"
 
-		[[ -n $(echo $types | grep " $ext ") ]] && \
-		local url="http://89.149.199.86/highlight/${name}" || \
-		local url="http://89.149.199.86/file/$r/$s"
+		#local ext=$(echo $1 | sed "s/^.*\.\([^\.]*\)$/\\1/")
+		#local types="dummy txt $(sed -n "s/^\$ext(\(.*\))=\(.*\)$/\\1 \\2/p" /etc/highlight/filetypes.conf) dummy"
+
+		#[[ -n $(echo $types | grep " $ext ") ]] && \
+		#local url="http://89.149.199.86/highlight/${name}" || \
+		#local url="http://89.149.199.86/file/$r/$s"
 
 		echo -n $url | xclip -selection clipboard
 		echo -n $url | xclip -selection primary
