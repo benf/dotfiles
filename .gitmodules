@@ -10,9 +10,9 @@
 [submodule ".config/vim/bundle/vim-css-color"]
 	path = .config/vim/bundle/vim-css-color
 	url = https://github.com/skammer/vim-css-color
-[submodule ".config/vim/bundle/vim-css3-syntax.git"]
-	path = .config/vim/bundle/vim-css3-syntax.git
-	url = https://github.com/hail2u/vim-css3-syntax.git
 [submodule ".config/vim/bundle/vim-less"]
 	path = .config/vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule ".config/vim/bundle/vim-css3-syntax"]
+	path = .config/vim/bundle/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax
